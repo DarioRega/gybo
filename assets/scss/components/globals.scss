@@ -17,3 +17,30 @@ $lines: (1,2,3,4,5);
   text-overflow: ellipsis;
   padding-bottom: 0 !important;
 }
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.theme-light {
+   .button-brand {
+     @apply bg-brand-dark-indigo text-white;
+
+     &:hover {
+       @apply bg-hover-tertiary;
+     }
+     &:focus {
+       @apply bg-focus-tertiary outline-none;
+     }
+   }
+
+  .link-brand {
+    &:hover {
+      @apply text-hover-secondary;
+    }
+    &:focus {
+      @apply bg-secondary outline-none;
+    }
+  }
+ }

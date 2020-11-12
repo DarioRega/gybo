@@ -1,0 +1,24 @@
+.theme-light {
+  --color-text-primary: #3e3e3e; // dark gray
+  --color-text-secondary: #6b7280; // gray
+  --color-text-hover-secondary: #1a202c; // darker gray
+  --color-text-tertiary: #5850ec; // dark indigo
+
+  --color-bg-primary: #fff; // white
+  --color-bg-secondary: #F9FAFB; // soft gray
+  --color-bg-hover-tertiary: #667eea; // lighter indigo
+  --color-bg-focus-tertiary: #4c51bf; // darker indigo
+}
+
+.theme-dusk {
+  --color-text-primary: #F9FAFB; // veryl ight gray
+  --color-text-secondary: #d2d6dc; // gray
+  --color-text-hover-secondary: #e2e8f0; // darker gray
+  --color-text-tertiary: #7f9cf5; // light indigo
+
+  --color-bg-primary: #252f3f; // dark gray soft
+  --color-bg-secondary: #161e2e; // dark gray strong
+  --color-bg-hover-tertiary: #a3bffa; // lighter indigo
+  --color-bg-focus-tertiary: #667eea; // darker indigo
+}
+

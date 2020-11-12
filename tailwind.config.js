@@ -30,6 +30,23 @@ module.exports = {
       xxl: '1920px',
     },
     extend: {
+      textColor: {
+        primary: 'var(--color-text-primary)',
+        secondary: 'var(--color-text-secondary)',
+        tertiary: 'var(--color-text-tertiary)',
+        'hover-secondary': 'var(--color-text-hover-secondary)',
+      },
+      backgroundColor: {
+        primary: 'var(--color-bg-primary)',
+        secondary: 'var(--color-bg-secondary)',
+        'hover-tertiary': 'var(--color-bg-hover-tertiary)',
+        'focus-tertiary': 'var(--color-bg-focus-tertiary)',
+      },
+      borderColor: {
+        primary: 'var(--color-text-primary)',
+        secondary: 'var(--color-text-secondary)',
+        tertiary: 'var(--color-text-tertiary)',
+      },
       colors: {
         brand: {
           grayish: '#6c6e64',
@@ -58,7 +75,12 @@ module.exports = {
   purge: {
     // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
     enabled: false, // process.env.NODE_ENV === 'production',
-    content: ['components/**/*.vue', 'layouts/**/*.vue', 'pages/**/*.vue', 'plugins/**/*.js', 'nuxt.config.js'],
+    content: [
+      'components/**/*.vue',
+      'layouts/**/*.vue',
+      'pages/**/*.vue',
+      'plugins/**/*.js',
+      'nuxt.config.js',
+    ],
   },
-};
-
+}
