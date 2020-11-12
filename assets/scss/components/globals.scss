@@ -1,0 +1,19 @@
+$lines: (1,2,3,4,5);
+
+@each $line in $lines {
+  .text-ellipsis-#{$line} {
+    -webkit-line-clamp: #{$line};
+    @extend .ellipsis-properties;
+  }
+}
+
+
+.ellipsis-properties {
+  overflow: hidden;
+  /* stylelint-disable */
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  /* stylelint-enable */
+  text-overflow: ellipsis;
+  padding-bottom: 0 !important;
+}

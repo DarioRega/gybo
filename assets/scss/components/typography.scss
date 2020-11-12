@@ -1,0 +1,152 @@
+h1, .h1 {
+  @apply text-heading-lg leading-16 font-light;
+  letter-spacing: -0.5px;
+
+  @screen lg {
+    @apply text-heading-xxl;
+  }
+
+  @screen xl {
+    @apply leading-20;
+  }
+}
+
+h2, .h2 {
+  @apply text-heading-md leading-12 font-light;
+  letter-spacing: 0;
+
+  @screen lg {
+    @apply text-heading-xl;
+  }
+
+  @screen xl {
+    @apply leading-19;
+  }
+}
+
+h3, .h3 {
+  @apply text-heading-sm leading-13 font-medium;
+  letter-spacing: .1px;
+
+  @screen lg {
+    @apply text-heading-lg font-normal;
+  }
+
+  @screen xl {
+    @apply leading-17;
+  }
+}
+
+h4, .h4 {
+  @apply text-heading-xs leading-10 font-semibold;
+  letter-spacing: .25px;
+
+  @screen lg {
+    @apply text-heading-md font-normal;
+  }
+
+  @screen xl {
+    @apply leading-14;
+  }
+}
+
+h5, .h5 {
+  @apply text-heading-xs leading-9 font-normal;
+  letter-spacing: 0;
+
+  @screen lg {
+    @apply text-heading-sm;
+  }
+
+  @screen xl {
+    @apply leading-11;
+  }
+}
+
+h6, .h6 {
+  @apply text-body-md leading-8 font-bold;
+  letter-spacing: .15px;
+
+  @screen lg {
+    @apply text-heading-xs;
+  }
+
+  @screen xl {
+    @apply leading-10;
+  }
+}
+
+.subtitle-1 {
+  @apply text-body-lg leading-8 font-normal;
+  letter-spacing: .15px;
+}
+
+.subtitle-2 {
+  @apply text-body-sm leading-7 font-medium;
+  letter-spacing: .1px;
+}
+
+p, .p, a, blockquote, cite, th  {
+  @apply text-body-md leading-9 font-normal;
+  letter-spacing: .5px;
+
+  @screen lg {
+    @apply text-body-lg;
+  }
+
+  @screen xl {
+    @apply leading-8;
+  }
+}
+
+button, .btn {
+  @apply text-body-sm leading-7 font-medium uppercase;
+  letter-spacing: 1.25px;
+
+  @screen lg {
+    @apply text-body-md;
+  }
+}
+
+.caption-lg {
+  @apply text-body-sm leading-6 font-normal;
+  letter-spacing: .4px;
+
+  @screen lg {
+    @apply text-body-md;
+  }
+}
+
+.caption-sm {
+  @apply text-body-xs leading-6 font-normal;
+  letter-spacing: .4px;
+
+  @screen lg {
+    @apply text-body-sm;
+  }
+}
+
+.overline {
+  @apply text-body-xs leading-6 font-normal;
+  letter-spacing: 1.5px;
+}
+
+blockquote {
+  @apply font-medium italic;
+}
+
+th {
+  @apply text-body-md font-semibold tracking-wider;
+
+  @screen md {
+    @apply text-body-lg;
+  }
+}
+
+td {
+  @apply text-body-sm;
+
+  @screen md {
+    @apply text-body-md;
+  }
+}

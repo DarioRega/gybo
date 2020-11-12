@@ -1,0 +1,6 @@
+.nuxt-storybook
+.nuxt
+coverage
+storybook-static
+storybook
+node_modules
