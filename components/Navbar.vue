@@ -1,8 +1,10 @@
 <template>
-  <div class="relative pt-6 pb-12 sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32">
-    <div class="max-w-screen-xl mx-auto px-4 sm:px-6">
+  <div
+    class="fixed lg:relative inset-x-0 h-24 my-auto flex justify-between items-center z-20 bg-primary"
+  >
+    <div class="max-w-screen-xl mx-auto w-full h-full px-4 sm:px-6 relative">
       <nav
-        class="relative flex items-center justify-between sm:h-10 md:justify-center"
+        class="relative flex items-center justify-between h-full md:justify-center"
       >
         <div
           class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0"
@@ -22,20 +24,9 @@
                 class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
                 aria-label="Main menu"
                 aria-haspopup="true"
+                @click="open"
               >
-                <svg
-                  class="h-6 w-6"
-                  stroke="currentColor"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
+                <icon name="hamburger" size="75" />
               </button>
             </div>
           </div>
@@ -58,65 +49,72 @@
         </div>
       </nav>
     </div>
-
-    <!--
-    Mobile menu, show/hide based on menu open state.
-
-    Entering: "duration-150 ease-out"
-      From: "opacity-0 scale-95"
-      To: "opacity-100 scale-100"
-    Leaving: "duration-100 ease-in"
-      From: "opacity-100 scale-100"
-      To: "opacity-0 scale-95"
-  -->
-    <div
-      class="absolute block top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-30"
+    <transition
+      enter-active-class="duration-150 eas-out"
+      enter-class="opacity-0 scale-95"
+      enter-to-class="opacity-100 scale-100"
+      leave-active-class="duration-100 ease-in"
+      leave-class="opacity-100 scale-100"
+      leave-to-class="opacity-0 scale-95"
     >
-      <div class="rounded-lg shadow-md">
+      <div v-show="isOpen" class="bg-primary">
         <div
-          class="rounded-lg bg-white shadow-xs overflow-hidden"
-          role="menu"
-          aria-orientation="vertical"
-          aria-labelledby="main-menu"
+          class="absolute block top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-50 bg-primary"
         >
-          <div class="px-5 pt-4 flex items-center justify-between">
-            <div>
-              <img
-                class="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/v1/workflow-mark-on-white.svg"
-                alt=""
-              />
+          <div class="rounded-lg shadow-md relative z-50">
+            <div
+              class="rounded-lg shadow-xs overflow-hidden"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="main-menu"
+            >
+              <div class="px-5 pt-4 flex items-center justify-between">
+                <div>
+                  <img
+                    class="h-8 w-auto"
+                    src="https://tailwindui.com/img/logos/v1/workflow-mark-on-white.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="-mr-2">
+                  <button
+                    type="button"
+                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+                    aria-label="Close menu"
+                    @click="close"
+                  >
+                    <icon name="close" size="75" />
+                  </button>
+                </div>
+              </div>
+              <div class="px-2 pt-6 pb-3">
+                <link-primary>Product</link-primary>
+                <link-primary>Case</link-primary>
+              </div>
             </div>
-            <div class="-mr-2">
-              <button
-                type="button"
-                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
-                aria-label="Close menu"
-              >
-                <icon :name="isOpen ? 'close' : 'hamburger'" size="75" />
-              </button>
-            </div>
-          </div>
-          <div class="px-2 pt-6 pb-3">
-            <link-primary>Product</link-primary>
-            <link-primary>Case</link-primary>
           </div>
         </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
 <script>
+import store, { closeMenu, openMenu } from '../store'
 export default {
-  name: 'Header',
-  props: {
-    isOpen: {
-      type: Boolean,
-      default: true,
+  name: 'Navbar',
+  computed: {
+    isOpen() {
+      return store.isOpen
+    },
+  },
+  methods: {
+    open() {
+      openMenu()
+    },
+    close() {
+      closeMenu()
     },
   },
 }
 </script>
-
-<style scoped></style>

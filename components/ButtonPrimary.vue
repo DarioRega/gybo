@@ -1,8 +1,8 @@
 <template>
   <button
-    class="button-brand w-full flex items-center justify-center px-8 py-3 border border-transparent font-medium rounded-md transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
+    class="button-brand inline-block px-6 lg:px-8 py-5 lg:py-3 border border-transparent font-semibold rounded-md transition duration-150 ease-in-out md:py-4 md:px-10"
   >
-    Get started
+    <slot />
   </button>
 </template>
 

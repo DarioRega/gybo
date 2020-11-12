@@ -1,0 +1,7 @@
+---
+caption: GYBO – Grow Your Business Online
+titlep1: Augmenter vos ventes 
+titlep2: grâce à la publicité en ligne et la psychologie humaine
+description: Vous voulez développer votre entreprise et générer un maximum de profit ?  Nos campagnes publicitaires sur Facebook, Instagram et Linkedin alliant technique et psychologie humaine sont la solution.
+button: Réservez votre consultation gratuite 
+---
