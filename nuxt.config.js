@@ -3,7 +3,7 @@ export default {
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
-  ssr: 'false',
+  mode: 'universal',
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
@@ -34,7 +34,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: ['~/plugins/components'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -63,6 +63,13 @@ export default {
     'nuxt-i18n',
     // Doc: https://github.com/nuxt-community/svg-sprite-module
     '@nuxtjs/svg-sprite',
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: '5j90o22pzb6PMhOoCQRINQtt',
+        cacheProvider: 'memory',
+      },
+    ],
   ],
   /*
    ** Axios module configuration
@@ -105,4 +112,4 @@ export default {
   svgSprite: {
     input: '~/assets/svg/',
   },
-};
+}

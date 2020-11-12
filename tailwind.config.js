@@ -51,7 +51,7 @@ module.exports = {
         brand: {
           grayish: '#6c6e64',
           'light-gray': '#f9fafb',
-          'ligh-indigo': '#8da2fb',
+          'light-indigo': '#8da2fb',
           'dark-gray': '#3e3e3e',
           'dark-indigo': '#5850ec',
         },

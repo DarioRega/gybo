@@ -1,5 +1,6 @@
 <template>
   <div
+    v-editable="blok"
     class="relative w-full overflow-hidden flex min-h-auto items-center pb-24"
   >
     <main
@@ -8,31 +9,31 @@
       <div class="text-left lg:text-center px-4">
         <div class="sm:hidden">
           <h4 class="text-primary pb-4 font-medium">
-            {{ content.caption }}
+            {{ blok.caption }}
           </h4>
           <h2 class="font-extrabold text-primary pb-8">
-            {{ content.titlep1 }}
+            {{ blok.titlep1 }}
             <br class="xl:hidden" />
-            <span class="text-tertiary">{{ content.titlep2 }}</span>
+            <span class="text-tertiary">{{ blok.titlep2 }}</span>
           </h2>
         </div>
         <div class="hidden md:block">
           <h3 class="text-primary pb-4 font-medium">
-            {{ content.caption }}
+            {{ blok.caption }}
           </h3>
           <h1 class="tracking-tight font-extrabold text-primary pb-8">
-            {{ content.titlep1 }}
+            {{ blok.titlep1 }}
             <br class="xl:hidden" />
-            <span class="text-tertiary">{{ content.titlep2 }}</span>
+            <span class="text-tertiary">{{ blok.titlep2 }}</span>
           </h1>
         </div>
         <p class="text-secondary mt-3 md:mt-5 md:max-w-6xl mx-auto pb-4">
-          {{ content.description }}
+          {{ blok.description }}
         </p>
         <div
           class="mt-8 max-w-xl md:max-w-2xl sm:flex justify-start lg:mx-auto md:mt-8"
         >
-          <button-primary> {{ content.button }} </button-primary>
+          <button-primary> {{ blok.buttonText }} </button-primary>
         </div>
       </div>
     </main>
@@ -43,13 +44,10 @@
 export default {
   name: 'Hero',
   props: {
-    content: {
+    blok: {
       type: Object,
       required: true,
     },
-  },
-  mounted() {
-    console.log('PROPS CONTENT')
   },
 }
 </script>

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt --port 3000",
     "build": "nuxt build",
     "build:analize": "npm run build -- --analize",
     "start": "nuxt start",
@@ -22,10 +22,11 @@
   "dependencies": {
     "@nuxt/content": "^1.9.0",
     "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/svg-sprite": "^0.4.12",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
     "nuxt-i18n": "^6.13.12",
-    "@nuxtjs/svg-sprite": "^0.4.12"
+    "storyblok-nuxt": "^1.3.0"
   },
   "devDependencies": {
     "@babel/runtime-corejs3": "^7.11.2",

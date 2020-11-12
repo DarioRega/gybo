@@ -44,3 +44,25 @@ $lines: (1,2,3,4,5);
     }
   }
  }
+
+.theme-dusk {
+  .button-brand {
+    @apply bg-brand-light-indigo text-white;
+
+    &:hover {
+      @apply bg-hover-tertiary;
+    }
+    &:focus {
+      @apply bg-focus-tertiary outline-none;
+    }
+  }
+
+  .link-brand {
+    &:hover {
+      @apply text-hover-secondary;
+    }
+    &:focus {
+      @apply bg-secondary outline-none;
+    }
+  }
+}
