@@ -86,21 +86,40 @@ h6, .h6 {
   letter-spacing: .1px;
 }
 
-p, .p, a, blockquote, cite, th  {
-  @apply text-body-md leading-9 font-normal;
+p, .p, a, blockquote, cite, th {
+  @apply text-body-lg leading-13 font-normal;
   letter-spacing: .5px;
 
   @screen lg {
-    @apply text-body-lg;
+    @apply text-body-xl leading-12;
   }
 
-  @screen xl {
-    @apply leading-8;
+}
+
+li {
+  @apply text-body-md leading-13 font-normal;
+  letter-spacing: .5px;
+
+  @screen lg {
+    @apply text-body-lg leading-12;
+  }
+}
+
+.rich-text {
+  li {
+    p {
+      @apply text-body-md leading-13 font-normal;
+      letter-spacing: .5px;
+
+      @screen lg {
+        @apply text-body-lg leading-12;
+      }
+    }
   }
 }
 
 button, .btn {
-  @apply text-body-sm leading-7 font-medium uppercase;
+  @apply text-body-md leading-7 font-medium uppercase;
   letter-spacing: 1.25px;
 
   @screen lg {

@@ -13,6 +13,7 @@ module.exports = {
       'heading-md': '2.4rem', // 35px
       'heading-sm': '2rem', // 24px
       'heading-xs': '1.6rem', // 20px
+      'body-xl': '1.8rem', // 16px
       'body-lg': '1.6rem', // 16px
       'body-md': '1.4rem', // 14px
       'body-sm': '1.2rem', // 12px
