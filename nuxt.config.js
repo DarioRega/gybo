@@ -57,8 +57,6 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    // Doc: https://github.com/nuxt/content
-    '@nuxt/content',
     // Doc: https://i18n.nuxtjs.org/setup
     'nuxt-i18n',
     // Doc: https://github.com/nuxt-community/svg-sprite-module

@@ -26,7 +26,6 @@ export default {
         version,
       })
       .then((res) => {
-        console.log('RES => ', res.data)
         return res.data
       })
       .catch((res) => {

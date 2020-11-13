@@ -32,8 +32,13 @@
           </div>
         </div>
         <div class="hidden md:flex md:space-x-10">
-          <link-primary>Productdsds</link-primary>
-          <link-primary>Features</link-primary>
+          <link-primary
+            v-for="link in blok.headerlink"
+            :key="link._uid"
+            :to="link.to ? link.to : '/'"
+            :alt="link.alt"
+            >{{ link.name }}</link-primary
+          >
         </div>
         <div
           class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0"
@@ -87,9 +92,14 @@
                   </button>
                 </div>
               </div>
-              <div class="px-2 pt-6 pb-3">
-                <link-primary>Product</link-primary>
-                <link-primary>Case</link-primary>
+              <div v-if="blok.headerlink" class="px-2 pt-6 pb-3">
+                <link-primary
+                  v-for="link in blok.headerlink"
+                  :key="link._uid"
+                  :to="link.to ? link.to : '/'"
+                  :alt="link.alt"
+                  >{{ link.name }}</link-primary
+                >
               </div>
             </div>
           </div>
@@ -103,6 +113,12 @@
 import store, { closeMenu, openMenu } from '../store'
 export default {
   name: 'Navbar',
+  props: {
+    blok: {
+      type: Object,
+      required: true,
+    },
+  },
   computed: {
     isOpen() {
       return store.isOpen
