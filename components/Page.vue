@@ -1,17 +1,18 @@
 <template>
-  <div v-editable="blok" class="px-6">
-    <component
-      :is="blok.component"
-      v-for="blok in blok.body"
-      :key="blok._uid"
-      :blok="blok"
-    />
-  </div>
+  <section>
+    <div v-editable="blok" class="page">
+      <component
+        :is="blok.component"
+        v-for="blok in blok.body"
+        :key="blok._uid"
+        :blok="blok"
+      ></component>
+    </div>
+  </section>
 </template>
 
 <script>
 export default {
-  name: 'Page',
   props: {
     blok: {
       type: Object,

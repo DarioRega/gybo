@@ -1,6 +1,5 @@
 <template>
   <div
-    v-editable="blok"
     class="relative w-full overflow-hidden flex min-h-auto items-center pb-24"
   >
     <main
@@ -31,7 +30,7 @@
           {{ blok.description }}
         </p>
         <div
-          class="mt-8 max-w-xl md:max-w-2xl sm:flex justify-start lg:mx-auto md:mt-8"
+          class="mt-8 max-w-xl md:max-w-2xl sm:flex justify-start lg:justify-center lg:mx-auto md:mt-8"
         >
           <button-primary> {{ blok.buttonText }} </button-primary>
         </div>

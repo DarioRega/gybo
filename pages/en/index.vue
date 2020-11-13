@@ -1,5 +1,9 @@
 <template>
-  <section>
+  <section v-editable="true" class="page">
+    <div class="pt-64">
+      <h1>asdfhsfdkhgkjdfhgjdfhg</h1>
+      TPAGE ACCUEIL
+    </div>
     <component
       :is="story.content.component"
       v-if="story.content.component"
@@ -12,16 +16,22 @@
 <script>
 export default {
   asyncData(context) {
+    console.log('OPUTE PATHAR', context.route)
     // // This what would we do in real project
-    // const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
-    // const fullSlug = (context.route.path == '/' || context.route.path == '') ? 'home' : context.route.path
+    const version =
+      context.query._storyblok || context.isDev ? 'draft' : 'published'
+    const fullSlug =
+      context.route.path === '/en' || context.route.path === 'en'
+        ? 'home'
+        : context.route.path
 
     // Load the JSON from the API - loadig the home content (index page)
     return context.app.$storyapi
-      .get('cdn/stories/home', {
-        version: 'draft',
+      .get(`cdn/stories/en/${fullSlug}`, {
+        version,
       })
       .then((res) => {
+        console.log('RES => ', res.data)
         return res.data
       })
       .catch((res) => {
