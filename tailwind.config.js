@@ -44,9 +44,8 @@ module.exports = {
         'focus-tertiary': 'var(--color-bg-focus-tertiary)',
       },
       borderColor: {
-        primary: 'var(--color-text-primary)',
-        secondary: 'var(--color-text-secondary)',
-        tertiary: 'var(--color-text-tertiary)',
+        primary: 'var(--color-border-primary)',
+        secondary: 'var(--color-border-secondary)',
       },
       colors: {
         brand: {

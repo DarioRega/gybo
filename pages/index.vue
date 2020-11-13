@@ -1,19 +1,16 @@
 <template>
-  <section class="px-8 sm:px-8">
+  <section>
     <component
       :is="story.content.component"
       v-if="story.content.component"
       :key="story.content._uid"
       :blok="story.content"
     />
-    <!--    <ContentTwoColumns />-->
   </section>
 </template>
 
 <script>
-import ContentTwoColumns from '@/components/ContentTwoColumns'
 export default {
-  components: { ContentTwoColumns },
   asyncData(context) {
     // // This what would we do in real project
     const version =

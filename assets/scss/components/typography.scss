@@ -3,11 +3,7 @@ h1, .h1 {
   letter-spacing: -0.5px;
 
   @screen lg {
-    @apply text-heading-xxl;
-  }
-
-  @screen xl {
-    @apply leading-20;
+    @apply text-heading-xxl leading-20;
   }
 }
 
@@ -16,11 +12,7 @@ h2, .h2 {
   letter-spacing: 0;
 
   @screen lg {
-    @apply text-heading-xl;
-  }
-
-  @screen xl {
-    @apply leading-19;
+    @apply text-heading-xl leading-19;
   }
 }
 
@@ -29,11 +21,7 @@ h3, .h3 {
   letter-spacing: .1px;
 
   @screen lg {
-    @apply text-heading-lg font-normal;
-  }
-
-  @screen xl {
-    @apply leading-17;
+    @apply text-heading-lg leading-17 font-normal;
   }
 }
 
@@ -42,11 +30,7 @@ h4, .h4 {
   letter-spacing: .25px;
 
   @screen lg {
-    @apply text-heading-md font-normal;
-  }
-
-  @screen xl {
-    @apply leading-14;
+    @apply text-heading-md leading-14 font-normal;
   }
 }
 
@@ -55,11 +39,7 @@ h5, .h5 {
   letter-spacing: 0;
 
   @screen lg {
-    @apply text-heading-sm;
-  }
-
-  @screen xl {
-    @apply leading-11;
+    @apply text-heading-sm leading-11;
   }
 }
 
@@ -68,11 +48,7 @@ h6, .h6 {
   letter-spacing: .15px;
 
   @screen lg {
-    @apply text-heading-xs;
-  }
-
-  @screen xl {
-    @apply leading-10;
+    @apply text-heading-xs leading-10;
   }
 }
 
@@ -106,6 +82,25 @@ li {
 }
 
 .rich-text {
+    p {
+      margin-bottom: 1rem;
+    }
+    ul {
+      li {
+        @apply relative list-none pl-10;
+
+        &::before {
+          @apply text-tertiary text-body-sm;
+          font-family: FontAwesome;
+          position: absolute;
+          left: 0;
+          content: '\f10c';
+        }
+        p {
+          margin-bottom: 0.5em;
+        }
+      }
+    }
   li {
     p {
       @apply text-body-md leading-13 font-normal;
@@ -119,7 +114,7 @@ li {
 }
 
 button, .btn {
-  @apply text-body-md leading-7 font-medium uppercase;
+  @apply text-body-sm leading-7 font-medium uppercase;
   letter-spacing: 1.25px;
 
   @screen lg {

@@ -4,22 +4,37 @@
       <div class="max-w-max-content lg:max-w-7xl mx-auto">
         <div class="relative z-10 mb-8 md:mb-2 md:px-6">
           <div class="lg:max-w-none">
-            <p class="text-tertiary font-semibold tracking-wide uppercase">
+            <p
+              class="text-tertiary caption-lg font-semibold tracking-wide uppercase"
+            >
               Transactions
             </p>
-            <h1 class="mt-2 font-extrabold tracking-tight text-primary">
+            <h2 class="mt-2 font-extrabold tracking-tight text-primary">
               A better way to send money
-            </h1>
+            </h2>
           </div>
         </div>
-        <div class="relative lg:mt-10 xl:mt-2 rich-text">
+        <div class="relative">
           <div class="relative md:p-6">
             <div class="lg:grid lg:grid-cols-2 lg:gap-32 mb-8">
-              <div class="text-secondary mb-6 lg:max-w-none lg:mb-0">
-                <div v-html="richtext_col1"></div>
+              <div class="mb-10 lg:max-w-none lg:mb-0">
+                <div
+                  class="rich-text text-secondary"
+                  v-html="richtext_col1"
+                ></div>
+                <button-primary
+                  v-if="buttonCta"
+                  class="mt-8"
+                  :to="buttonCta.path"
+                  :alt="buttonCta.alt"
+                  >{{ buttonCta.name }}</button-primary
+                >
               </div>
               <h3 class="md:hidden pt-2 pb-1 font-semibold">Here to help</h3>
-              <div class="text-secondary" v-html="richtext_col2"></div>
+              <div
+                class="text-secondary rich-text"
+                v-html="richtext_col2"
+              ></div>
             </div>
           </div>
         </div>
@@ -44,36 +59,12 @@ export default {
     richtext_col2() {
       return this.$storyapi.richTextResolver.render(this.blok.col_2)
     },
+    buttonCta() {
+      return this.blok.buttonCta[0]
+    },
   },
   mounted() {
     console.log('COINTENTWO COLUMN BLOK', this.blok)
   },
 }
 </script>
-
-<style lang="scss">
-.rich-text {
-  p {
-    margin-bottom: 1rem;
-    @screen md {
-      margin-bottom: 2rem;
-    }
-  }
-  ul {
-    li {
-      @apply relative list-none pl-10;
-
-      &::before {
-        @apply text-tertiary text-body-sm;
-        font-family: FontAwesome;
-        position: absolute;
-        left: 0;
-        content: '\f10c';
-      }
-      p {
-        margin-bottom: 0.5em;
-      }
-    }
-  }
-}
-</style>

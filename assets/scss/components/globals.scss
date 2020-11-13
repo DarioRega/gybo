@@ -19,9 +19,9 @@ $lines: (1,2,3,4,5);
 }
 
 .container {
-  @apply mx-auto;
+  @apply px-12;
     @screen md {
-    @apply w-11/12;
+    @apply w-11/12 mx-auto;
   }
   @screen xl {
     @apply w-10/12;
