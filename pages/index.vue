@@ -6,6 +6,7 @@
       :key="story.content._uid"
       :blok="story.content"
     />
+    <container-why-choose-us />
   </section>
 </template>
 

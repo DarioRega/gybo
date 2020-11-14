@@ -40,6 +40,7 @@ module.exports = {
       backgroundColor: {
         primary: 'var(--color-bg-primary)',
         secondary: 'var(--color-bg-secondary)',
+        tertiary: 'var(--color-bg-tertiary)',
         'hover-tertiary': 'var(--color-bg-hover-tertiary)',
         'focus-tertiary': 'var(--color-bg-focus-tertiary)',
       },
