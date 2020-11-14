@@ -1,10 +1,18 @@
 <template>
-  <div v-editable="blok" class="teaser container py-16 mb-8 xl:py-36">
-    <p class="text-tertiary caption-lg font-semibold tracking-wide uppercase">
+  <div
+    v-editable="blok"
+    class="teaser"
+    :class="!isNested && 'container top-spacer mb-8'"
+  >
+    <p
+      v-if="blok.caption"
+      class="text-tertiary mb-4 caption-lg font-semibold tracking-wide uppercase"
+    >
       {{ blok.caption }}
     </p>
     <h2
-      class="mt-4 lg:mb-6 xl:mb-10 xl:mb-2 font-extrabold tracking-tight text-primary"
+      class="font-extrabold tracking-tight text-primary"
+      :class="!isNested && 'lg:mb-6 xl:mb-10 xl:mb-2'"
     >
       {{ blok.headline }}
     </h2>
@@ -19,6 +27,10 @@ export default {
     blok: {
       type: Object,
       required: true,
+    },
+    isNested: {
+      type: Boolean,
+      default: false,
     },
   },
 }

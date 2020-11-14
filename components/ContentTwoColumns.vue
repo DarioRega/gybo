@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 xl:py-36 bg-secondary w-full overflow-hidden">
+  <section class="section-spacer bg-secondary w-full overflow-hidden">
     <div class="container">
       <div class="max-w-max-content lg:max-w-7xl mx-auto">
         <div class="relative z-10 mb-8 md:mb-2 md:px-6">
@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="relative">
-          <div class="relative md:p-6">
+          <div class="relative md:px-6 pt-6">
             <div class="lg:grid lg:grid-cols-2 lg:gap-32 mb-8">
               <div class="mb-10 lg:max-w-none lg:mb-0">
                 <div

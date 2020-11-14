@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-primary">
+  <section class="bg-primary section-spacer">
     <div class="container">
       <div
         v-if="blok"

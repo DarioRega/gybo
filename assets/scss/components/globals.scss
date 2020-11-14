@@ -32,6 +32,27 @@ $lines: (1,2,3,4,5);
   }
 }
 
+.section-spacer {
+  @apply py-16;
+  @screen xl {
+    @apply py-32;
+  }
+}
+
+.top-spacer {
+  @apply pt-16;
+  @screen xl {
+    @apply pt-32;
+  }
+}
+
+.bottom-spacer {
+  @apply pb-16;
+  @screen xl {
+    @apply pb-32;
+  }
+}
+
 .theme-light {
    .button-brand {
      @apply bg-brand-dark-indigo text-white;
