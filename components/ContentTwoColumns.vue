@@ -63,8 +63,5 @@ export default {
       return this.blok.buttonCta[0]
     },
   },
-  mounted() {
-    console.log('COINTENTWO COLUMN BLOK', this.blok)
-  },
 }
 </script>

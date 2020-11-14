@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article v-editable="blok">
     <div
       class="flex flex-col lg:items-center rounded-lg shadow-lg md:shadow-none overflow-hidden card-swap"
       :class="blok.side === 'right' ? 'lg:flex-row' : 'lg:flex-row-reverse'"
@@ -13,7 +13,11 @@
           class="w-full object-cover md:w-4/5 md:max-w-sm xl:max-w-lg h-64 md:h-auto lg:h-auto mx-auto"
           type="image/svg+xml"
         >
-          <img :src="blok.imageSupportOldNavs" :alt="blok.title" />
+          <img
+            :src="blok.imageSupportOldNavs"
+            :alt="blok.title"
+            class="w-full object-cover md:w-4/5 md:max-w-sm xl:max-w-lg h-64 md:h-auto lg:h-auto mx-auto"
+          />
         </object>
       </div>
       <div
@@ -50,9 +54,6 @@ export default {
     content_blok() {
       return this.$storyapi.richTextResolver.render(this.blok.text)
     },
-  },
-  mounted() {
-    console.log('THIS CONTENT BLOK SWAP', this.blok)
   },
 }
 </script>

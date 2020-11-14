@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section v-editable="blok" class="container">
     <content-swap
       v-for="(item, index) in blok.items"
       :key="item._uid"
@@ -17,9 +17,6 @@ export default {
       type: Object,
       required: true,
     },
-  },
-  mounted() {
-    console.log('THISBLOK CONTAINER', this.blok)
   },
 }
 </script>

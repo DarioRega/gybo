@@ -23,7 +23,6 @@ export default {
         version,
       })
       .then((res) => {
-        console.log('DEFAULT NAVBAR', res.data)
         return res.data
       })
       .catch((res) => {

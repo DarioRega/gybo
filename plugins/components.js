@@ -8,6 +8,8 @@ import Navbar from '@/components/Navbar'
 import ContentTwoColumns from '@/components/ContentTwoColumns'
 import ContainerContentSwap from '@/components/ContainerContentSwap'
 import ContentSwap from '@/components/ContentSwap'
+import ContainerTestimonials from '@/components/ContainerTestimonials'
+import Testimonial from '@/components/Testimonial'
 
 Vue.component('page', Page)
 Vue.component('teaser', Teaser)
@@ -15,6 +17,8 @@ Vue.component('hero', Hero)
 Vue.component('content-two-columns', ContentTwoColumns)
 Vue.component('container-swap', ContainerContentSwap)
 Vue.component('content-swap', ContentSwap)
+Vue.component('container-testimonials', ContainerTestimonials)
+Vue.component('testimonial', Testimonial)
 
 Vue.component('navbar', Navbar)
 Vue.component('button-primary', ButtonPrimary)
