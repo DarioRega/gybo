@@ -14,9 +14,10 @@
           class="sm:grid sm:grid-cols-2 sm:gap-x-16 sm:gap-y-16 lg:gap-y-32 lg:gap-x-20 lg:col-span-2"
         >
           <choose-us-arg
-            v-for="item in blok.item_why_us"
+            v-for="(item, index) in blok.item_why_us"
             :key="item._uid"
             :blok="item"
+            :class="index < blok.item_why_us.length - 1 && 'mb-16 sm:mb-0'"
           />
         </div>
       </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-16 sm:mt-0">
+  <div>
     <div
       class="flex items-center justify-center h-20 w-20 rounded-md bg-tertiary text-brand-light-gray"
     >

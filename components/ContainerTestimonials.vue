@@ -1,6 +1,12 @@
 <template>
   <section class="bg-primary section-spacer">
     <div class="container pb-8 sm:pb-0">
+      <teaser
+        v-for="item in blok.teaser"
+        :key="item._uid"
+        :blok="item"
+        :is-nested="true"
+      />
       <div v-if="blok" class="carousel w-full md:w-3/4 mx-auto">
         <no-ssr>
           <hooper :settings="hooperSettings">
@@ -18,10 +24,6 @@
             <hooper-pagination slot="hooper-addons"></hooper-pagination>
           </hooper>
         </no-ssr>
-
-        <!--        <div v-for="item in blok.testimonial" :key="item._uid">-->
-        <!--          <testimonial :blok="item" />-->
-        <!--        </div>-->
       </div>
     </div>
   </section>

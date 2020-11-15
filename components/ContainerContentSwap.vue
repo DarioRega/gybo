@@ -1,5 +1,11 @@
 <template>
   <section v-editable="blok" class="container section-spacer">
+    <teaser
+      v-for="item in blok.teaser"
+      :key="item._uid"
+      :blok="item"
+      :is-nested="true"
+    />
     <content-swap
       v-for="(item, index) in blok.items"
       :key="item._uid"

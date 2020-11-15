@@ -12,6 +12,7 @@ import ContainerTestimonials from '@/components/ContainerTestimonials'
 import Testimonial from '@/components/Testimonial'
 import ContainerWhyChooseUs from '@/components/ContainerWhyChooseUs'
 import ChooseUsArg from '@/components/ChooseUsArg'
+import ProjetTest from '@/components/ProjetTest'
 
 Vue.component('page', Page)
 Vue.component('teaser', Teaser)
@@ -22,6 +23,7 @@ Vue.component('content-swap', ContentSwap)
 Vue.component('container-testimonials', ContainerTestimonials)
 Vue.component('testimonial', Testimonial)
 Vue.component('container-why-us', ContainerWhyChooseUs)
+Vue.component('project-test-section', ProjetTest)
 Vue.component('item-why-us', ChooseUsArg)
 Vue.component('navbar', Navbar)
 Vue.component('button-primary', ButtonPrimary)

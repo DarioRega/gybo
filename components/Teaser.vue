@@ -1,7 +1,7 @@
 <template>
   <div
     v-editable="blok"
-    class="teaser"
+    class="max-w-6xl mr-auto"
     :class="!isNested && 'container top-spacer mb-8'"
   >
     <p
@@ -10,10 +10,19 @@
     >
       {{ blok.caption }}
     </p>
-    <h2 class="font-extrabold tracking-tight text-primary title-spacer">
+    <h2
+      class="font-extrabold tracking-tight text-primary"
+      :class="hasContent() ? 'mb-4' : 'title-spacer'"
+    >
       {{ blok.headline }}
     </h2>
-    <p v-if="blok.description" class="text-secondary">{{ blok.description }}</p>
+    <div v-if="typeof blok.description === 'object'">
+      <div
+        v-if="hasContent()"
+        class="text-secondary mb-12 rich-text"
+        v-html="content_description"
+      ></div>
+    </div>
   </div>
 </template>
 
@@ -28,6 +37,29 @@ export default {
     isNested: {
       type: Boolean,
       default: false,
+    },
+  },
+  computed: {
+    content_description() {
+      return this.$storyapi.richTextResolver.render(this.blok.description)
+    },
+  },
+  methods: {
+    hasContent() {
+      const description = this.blok.description
+      if (description.content) {
+        if (description.content[0]) {
+          console.log('description.content[0]', description.content[0])
+          if (description.content[0].text) {
+            return true
+          } else if (description.content[0].content) {
+            if (description.content[0].content[0]) {
+              if (description.content[0].content[0].text) return true
+            }
+          }
+        }
+      }
+      return false
     },
   },
 }

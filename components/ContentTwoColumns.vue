@@ -2,7 +2,7 @@
   <section class="section-spacer bg-secondary w-full overflow-hidden">
     <div class="container">
       <div class="max-w-max-content lg:max-w-7xl mx-auto">
-        <div class="relative z-10 mb-8 md:mb-2 md:px-6">
+        <div class="relative z-10 md:px-6">
           <div class="lg:max-w-none">
             <teaser
               v-for="item in blok.teaser"
