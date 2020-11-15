@@ -1,12 +1,13 @@
 <template>
   <section>
-    <component
-      :is="story.content.component"
-      v-if="story.content.component"
-      :key="story.content._uid"
-      v-editable="true"
-      :blok="story.content"
-    />
+    <!--    <component-->
+    <!--      :is="story.content.component"-->
+    <!--      v-if="story.content.component"-->
+    <!--      :key="story.content._uid"-->
+    <!--      v-editable="true"-->
+    <!--      :blok="story.content"-->
+    <!--    />-->
+    <container-process-step />
   </section>
 </template>
 
