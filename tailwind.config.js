@@ -57,6 +57,10 @@ module.exports = {
           'dark-indigo': '#5850ec',
         },
       },
+      boxShadow: {
+        base: '0px 6px 13px 2px rgba(0,0,0,0.05)',
+        full: '0px 6px 13px 2px rgba(0,0,0,0.15)',
+      },
       lineHeight: {
         20: '6rem',
         19: '5.5rem',

@@ -16,7 +16,7 @@
           </div>
         </div>
         <blockquote class="mt-8">
-          <div class="max-w-3xl mx-auto text-center font-medium text-primary">
+          <div class="max-w-4xl mx-auto text-center font-medium text-primary">
             <p>{{ blok.text }}</p>
           </div>
           <footer class="mt-8">
