@@ -1,6 +1,6 @@
 <template>
   <section class="bg-primary section-spacer">
-    <div class="container">
+    <div class="container pb-8 sm:pb-0">
       <div v-if="blok" class="carousel w-full md:w-3/4 mx-auto">
         <no-ssr>
           <hooper :settings="hooperSettings">
@@ -9,16 +9,13 @@
               :key="index"
               :index="index"
             >
-              <testimonial :blok="item" class="px-0 md:px-12" />
+              <testimonial :blok="item" />
             </slide>
             <hooper-navigation
               slot="hooper-addons"
               class="hidden sm:block"
             ></hooper-navigation>
-            <hooper-pagination
-              slot="hooper-addons"
-              class="sm:hidden"
-            ></hooper-pagination>
+            <hooper-pagination slot="hooper-addons"></hooper-pagination>
           </hooper>
         </no-ssr>
 
@@ -58,46 +55,70 @@ export default {
       hooperSettings: {
         itemsToShow: 1,
         centerMode: true,
-        autoPlay: false,
+        autoPlay: true,
         infiniteScroll: true,
         playSpeed: '3000',
+        transition: 600,
       },
     }
-  },
-  mounted() {
-    console.log('CONTAINER TESTIM', this.blok)
   },
 }
 </script>
 <style lang="scss">
-.carousel {
-  .hooper {
-    height: auto;
+.hooper {
+  height: auto;
+  cursor: grab;
+  &:focus {
+    @apply outline-none;
+  }
 
+  .hooper-prev {
+    left: -8rem;
+  }
+  .hooper-next {
+    right: -8rem;
+  }
+
+  .hooper-prev,
+  .hooper-next {
+    @apply bg-secondary shadow-base rounded-full text-primary p-4;
+
+    &:hover {
+      @apply shadow-full;
+    }
     &:focus {
       @apply outline-none;
     }
 
-    .hooper-prev,
-    .hooper-next {
-      @apply bg-secondary shadow-base rounded-full text-primary p-4;
+    svg {
+      @apply fill-current text-current;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+  .hooper-pagination {
+    bottom: -4rem;
+    .hooper-indicators {
+      @apply w-64 justify-center;
 
-      &:hover {
-        @apply shadow-full;
+      li {
+        margin: 0 0.6rem;
+      }
+      @screen sm {
+        display: none;
+      }
+    }
+    .hooper-indicator {
+      width: 20px;
+      height: 8px;
+      border: 1px solid;
+      @apply border-tertiary transition-colors duration-100 ease-linear;
+
+      &.is-active {
+        @apply bg-tertiary;
       }
       &:focus {
         @apply outline-none;
-      }
-
-      svg {
-        @apply fill-current text-current;
-        width: 3rem;
-        height: 3rem;
-      }
-    }
-    .hooper-pagination {
-      top: -6rem;
-      .hooper-indicators {
       }
     }
   }

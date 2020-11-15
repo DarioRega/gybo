@@ -47,6 +47,7 @@ module.exports = {
       borderColor: {
         primary: 'var(--color-border-primary)',
         secondary: 'var(--color-border-secondary)',
+        tertiary: 'var(--color-border-tertiary)',
       },
       colors: {
         brand: {

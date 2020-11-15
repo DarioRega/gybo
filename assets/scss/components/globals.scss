@@ -32,6 +32,17 @@ $lines: (1,2,3,4,5);
   }
 }
 
+.title-spacer {
+    @apply pb-4;
+
+    @screen lg {
+      @apply pb-8;
+    }
+    @screen xl {
+      @apply pb-10;
+    }
+}
+
 .section-spacer {
   @apply py-16;
   @screen xl {

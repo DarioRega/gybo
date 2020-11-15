@@ -9,7 +9,7 @@
             <h4 class="text-primary pb-4 font-medium">
               {{ blok.caption }}
             </h4>
-            <h2 class="font-extrabold text-primary pb-8">
+            <h2 class="font-extrabold text-primary pb-4 lg:pb-8 xl:pb-10">
               {{ blok.titlep1 }}
               <br class="xl:hidden" />
               <span class="text-tertiary">{{ blok.titlep2 }}</span>

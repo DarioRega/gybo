@@ -1,22 +1,22 @@
 <template>
   <section class="testimonial bg-primary overflow-hidden">
-    <div
-      v-if="blok"
-      class="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8"
-    >
-      <div class="relative">
+    <div v-if="blok" class="relative mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative max-w-2xl xl:max-w-5xl mx-auto">
         <div class="w-full testimonial__container">
-          <div class="mx-auto w-48">
+          <div
+            class="mx-auto testimonial__logo"
+            :class="blok.isLandscape ? 'is-landscape' : 'is-portrait'"
+          >
             <img
               :src="blok.logo.filename"
               :onerror="blok.logoSupportOldNavs.filename"
               :alt="blok.logoSupportOldNavs.alt"
-              class="w-full h-full testimonial__logo"
+              class="w-full h-full"
             />
           </div>
         </div>
         <blockquote class="mt-8">
-          <div class="max-w-4xl mx-auto text-center font-medium text-primary">
+          <div class="mx-auto text-center font-medium text-primary">
             <p>{{ blok.text }}</p>
           </div>
           <footer class="mt-8">
@@ -59,3 +59,14 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.testimonial__logo {
+  &.is-landscape {
+    @apply h-32;
+  }
+  &.is-portrait {
+    @apply w-40;
+  }
+}
+</style>

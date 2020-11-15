@@ -10,13 +10,10 @@
     >
       {{ blok.caption }}
     </p>
-    <h2
-      class="font-extrabold tracking-tight text-primary"
-      :class="!isNested && 'lg:mb-6 xl:mb-10 xl:mb-2'"
-    >
+    <h2 class="font-extrabold tracking-tight text-primary title-spacer">
       {{ blok.headline }}
     </h2>
-    <p v-if="blok.description">{{ blok.description }}</p>
+    <p v-if="blok.description" class="text-secondary">{{ blok.description }}</p>
   </div>
 </template>
 

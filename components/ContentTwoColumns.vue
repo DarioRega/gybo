@@ -4,18 +4,16 @@
       <div class="max-w-max-content lg:max-w-7xl mx-auto">
         <div class="relative z-10 mb-8 md:mb-2 md:px-6">
           <div class="lg:max-w-none">
-            <p
-              class="text-tertiary caption-lg font-semibold tracking-wide uppercase"
-            >
-              Transactions
-            </p>
-            <h2 class="mt-2 font-extrabold tracking-tight text-primary">
-              A better way to send money
-            </h2>
+            <teaser
+              v-for="item in blok.teaser"
+              :key="item._uid"
+              :blok="item"
+              :is-nested="true"
+            />
           </div>
         </div>
         <div class="relative">
-          <div class="relative md:px-6 pt-6">
+          <div class="relative md:px-6">
             <div class="lg:grid lg:grid-cols-2 lg:gap-32 mb-8">
               <div class="mb-10 lg:max-w-none lg:mb-0">
                 <div
@@ -62,6 +60,9 @@ export default {
     buttonCta() {
       return this.blok.buttonCta[0]
     },
+  },
+  mounted() {
+    console.log('content two columns', this.blok)
   },
 }
 </script>
