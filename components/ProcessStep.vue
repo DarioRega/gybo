@@ -1,7 +1,9 @@
 <template>
   <article>
-    <div class="flex justify-between items-start">
-      <div class="w-9/12 flex-none mr-auto pr-12">
+    <div
+      class="flex flex-col-reverse md:flex-row justify-start md:justify-between items-start"
+    >
+      <div class="md:w-9/12 flex-none mr-auto md:pr-12">
         <p
           class="text-tertiary mb-2 caption-lg font-semibold tracking-wide uppercase"
         >
@@ -17,7 +19,7 @@
           </p>
         </div>
       </div>
-      <div class="w-56 ml-auto flex-none">
+      <div class="w-56 md:ml-auto flex-none">
         <img src="//a.storyblok.com/f/97504/512x512/83153924be/campaign.svg" />
       </div>
     </div>

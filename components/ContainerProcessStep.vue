@@ -7,8 +7,8 @@
           :key="index"
           :class="
             index % 2 === 0
-              ? 'pr-12 xl:pr-24 border-r-4 border-tertiary'
-              : 'pl-12 xl:pl-24'
+              ? 'md:pr-12 xl:pr-24 md:border-r-4 border-tertiary'
+              : 'md:pl-12 xl:pl-24'
           "
         />
       </div>
