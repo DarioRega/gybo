@@ -13,6 +13,8 @@ import Testimonial from '@/components/Testimonial'
 import ContainerWhyChooseUs from '@/components/ContainerWhyChooseUs'
 import ChooseUsArg from '@/components/ChooseUsArg'
 import ProjetTest from '@/components/ProjetTest'
+import ContainerProcessStep from '@/components/ContainerProcessStep'
+import ProcessStep from '@/components/ProcessStep'
 
 Vue.component('page', Page)
 Vue.component('teaser', Teaser)
@@ -24,6 +26,8 @@ Vue.component('container-testimonials', ContainerTestimonials)
 Vue.component('testimonial', Testimonial)
 Vue.component('container-why-us', ContainerWhyChooseUs)
 Vue.component('project-test-section', ProjetTest)
+Vue.component('container-process-step', ContainerProcessStep)
+Vue.component('process-step-item', ProcessStep)
 Vue.component('item-why-us', ChooseUsArg)
 Vue.component('navbar', Navbar)
 Vue.component('button-primary', ButtonPrimary)
