@@ -57,6 +57,8 @@ module.exports = {
           'light-indigo': '#8da2fb',
           'dark-gray': '#3e3e3e',
           'dark-indigo': '#5850ec',
+          error: '#f56565',
+          'error-dark': '#f56565',
         },
       },
       boxShadow: {

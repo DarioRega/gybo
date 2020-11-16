@@ -13,7 +13,7 @@
               :blok="item"
               :is-nested="true"
             />
-            <contact-card class="hidden lg:flex" />
+            <contact-card class="hidden lg:flex" :contact="blok.contactGybo" />
           </div>
         </div>
         <div
@@ -25,7 +25,10 @@
             :blok="item"
             class="flex-1"
           />
-          <contact-card class="md:flex lg:hidden md:max-w-xs w-full" />
+          <contact-card
+            class="md:flex lg:hidden md:max-w-xs w-full"
+            :contact="blok.contactGybo"
+          />
         </div>
       </div>
     </div>

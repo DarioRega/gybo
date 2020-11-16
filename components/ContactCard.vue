@@ -5,8 +5,10 @@
     <div
       class="card-content h-full w-full rounded-b-md border-tertiary flex items-center justify-center"
     >
-      <a class="text-primary font-semibold hover:underline" href="mailto:'dasd'"
-        >contact@gybo.ch</a
+      <a
+        class="text-primary font-semibold hover:underline"
+        :href="'mailto:' + contact"
+        >{{ contact }}</a
       >
     </div>
   </div>
@@ -15,6 +17,12 @@
 <script>
 export default {
   name: 'ContactCard',
+  props: {
+    contact: {
+      type: String,
+      default: 'contact@gybo.ch',
+    },
+  },
 }
 </script>
 

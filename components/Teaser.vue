@@ -49,7 +49,6 @@ export default {
       const description = this.blok.description
       if (description.content) {
         if (description.content[0]) {
-          console.log('description.content[0]', description.content[0])
           if (description.content[0].text) {
             return true
           } else if (description.content[0].content) {

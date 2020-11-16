@@ -1,4 +1,4 @@
-$lines: (1,2,3,4,5);
+$lines: (1, 2, 3, 4, 5);
 
 @each $line in $lines {
   .text-ellipsis-#{$line} {
@@ -20,7 +20,7 @@ $lines: (1,2,3,4,5);
 
 .container {
   @apply px-12;
-    @screen md {
+  @screen md {
     @apply w-11/12 mx-auto;
   }
   @screen xl {
@@ -33,14 +33,14 @@ $lines: (1,2,3,4,5);
 }
 
 .title-spacer {
-    @apply pb-8;
+  @apply pb-8;
 
-    @screen lg {
-      @apply pb-8;
-    }
-    @screen xl {
-      @apply pb-10;
-    }
+  @screen lg {
+    @apply pb-8;
+  }
+  @screen xl {
+    @apply pb-10;
+  }
 }
 
 .section-spacer {
@@ -66,21 +66,23 @@ $lines: (1,2,3,4,5);
 
 .theme-light {
 
-   .button-brand {
-     @apply bg-brand-dark-indigo text-white;
+  .button-brand {
+    @apply bg-brand-dark-indigo text-white;
 
-     &:hover {
-       @apply bg-hover-tertiary;
-     }
-     &:focus {
-       @apply bg-focus-tertiary outline-none;
-     }
-   }
+    &:hover {
+      @apply bg-hover-tertiary;
+    }
+
+    &:focus {
+      @apply bg-focus-tertiary outline-none;
+    }
+  }
 
   .link-brand {
     &:hover {
       @apply text-hover-secondary;
     }
+
     &:focus {
       @apply bg-secondary outline-none;
     }
@@ -92,7 +94,7 @@ $lines: (1,2,3,4,5);
       box-shadow: 0 0 0 3px rgba(88, 80, 236, 0.45); // text-tertiary theme
     }
   }
- }
+}
 
 .theme-dusk {
   .button-brand {
@@ -101,6 +103,7 @@ $lines: (1,2,3,4,5);
     &:hover {
       @apply bg-hover-tertiary;
     }
+
     &:focus {
       @apply bg-focus-tertiary outline-none;
     }
@@ -110,6 +113,7 @@ $lines: (1,2,3,4,5);
     &:hover {
       @apply text-hover-secondary;
     }
+
     &:focus {
       @apply bg-secondary outline-none;
     }
@@ -128,10 +132,24 @@ $lines: (1,2,3,4,5);
 }
 
 .form-input {
-  @apply border border-primary rounded-md mb-4 text-primary;
+  @apply border border-primary rounded-md text-primary;
+  &.has-error {
+    @apply border-red-300 text-red-900;
+    &:focus {
+      @apply border-red-300;
+    }
+    &::-webkit-input-placeholder {
+      @apply text-red-500;
+    }
+  }
+  &::-webkit-input-placeholder {
+    @apply text-secondary;
+  }
 }
 
-.form-input::placeholder {
-  @apply text-secondary;
+.form-outline.has-error {
+  &:focus {
+    @apply border-red-300;
+    box-shadow: 0 0 0 3px rgba(245, 101, 101, 0.45) !important; // text-tertiary theme
+  }
 }
-
