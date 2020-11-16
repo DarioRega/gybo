@@ -65,6 +65,7 @@ $lines: (1,2,3,4,5);
 }
 
 .theme-light {
+
    .button-brand {
      @apply bg-brand-dark-indigo text-white;
 
@@ -82,6 +83,13 @@ $lines: (1,2,3,4,5);
     }
     &:focus {
       @apply bg-secondary outline-none;
+    }
+  }
+
+  .form-outline {
+    &:focus {
+      @apply outline-none border-transparent;
+      box-shadow: 0 0 0 3px rgba(88, 80, 236, 0.45); // text-tertiary theme
     }
   }
  }
@@ -106,4 +114,23 @@ $lines: (1,2,3,4,5);
       @apply bg-secondary outline-none;
     }
   }
+  .form-outline {
+    &:focus {
+      @apply outline-none border-transparent;
+      box-shadow: 0 0 0 3px rgba(127, 156, 245, 0.45); // text-tertiary theme
+    }
+  }
 }
+
+.form-input {
+  @apply border border-primary rounded-md mb-4 text-primary;
+}
+.theme-dusk {
+  .form-input {
+    @apply bg-secondary border-secondary;
+  }
+}
+.form-input::placeholder {
+  @apply text-secondary;
+}
+

@@ -42,9 +42,6 @@ export default {
       return this.$storyapi.richTextResolver.render(this.blok.description)
     },
   },
-  mounted() {
-    console.log('BLOK IN PROCESS STEP', this.blok)
-  },
 }
 </script>
 

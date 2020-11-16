@@ -15,6 +15,9 @@ import ChooseUsArg from '@/components/ChooseUsArg'
 import ProjetTest from '@/components/ProjetTest'
 import ContainerProcessStep from '@/components/ContainerProcessStep'
 import ProcessStep from '@/components/ProcessStep'
+import ContactForm from '@/components/ContactForm'
+import InputForm from '@/components/InputForm'
+import ContactSection from '@/components/ContactSection'
 
 Vue.component('page', Page)
 Vue.component('teaser', Teaser)
@@ -29,6 +32,9 @@ Vue.component('project-test-section', ProjetTest)
 Vue.component('container-process-step', ContainerProcessStep)
 Vue.component('process-step-item', ProcessStep)
 Vue.component('item-why-us', ChooseUsArg)
+Vue.component('contact-section', ContactSection)
+Vue.component('contact-form', ContactForm)
+Vue.component('contact-field', InputForm)
 Vue.component('navbar', Navbar)
 Vue.component('button-primary', ButtonPrimary)
 Vue.component('link-primary', LinkPrimary)
