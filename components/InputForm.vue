@@ -44,7 +44,7 @@
       </div>
     </div>
     <p v-if="error" id="email-error" class="mt-3 caption-lg text-red-600">
-      Your password must be less than 4 characters.
+      {{ error }}
     </p>
   </div>
 </template>

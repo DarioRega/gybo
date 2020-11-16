@@ -4,25 +4,21 @@
       class="max-w-xl w-full lg:max-w-2xl xl:max-w-5xl xxl:max-w-6xl md:ml-0 lg:ml-auto lg:mr-0 mx-auto"
     >
       <form
-        action="#"
-        method="POST"
-        class="grid grid-cols-1 gap-y-6 md:gap-y-8"
+        class="grid grid-cols-1 gap-y-6 md:gap-y-6"
+        @submit.prevent="handleSubmit"
       >
         <input-form
           v-for="field in blok.fields"
           :key="field._uid"
           :blok="field"
-          :error="hasError(field.name)"
+          :error="hasError(field.id)"
           @valueChange="valueChange"
         />
-        <div class="">
+        <div class="mt-4">
           <span class="inline-flex rounded-md shadow-sm">
-            <button
-              type="submit"
-              class="inline-flex justify-center py-3 px-6 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
-            >
+            <button-primary type="submit">
               {{ blok.submitButton }}
-            </button>
+            </button-primary>
           </span>
         </div>
       </form>
@@ -42,22 +38,54 @@ export default {
   data() {
     return {
       formValues: {},
-      errors: [],
+      errors: {},
+      optionalFields: [''],
     }
   },
   mounted() {
-    console.log('THIS BLOK CONTACT FORM', this.blok)
+    this.blok.fields.forEach((field) => {
+      if (field) {
+        this.formValues[field.id] = ''
+        if (field.isOptional) {
+          this.optionalFields.push(field.id)
+        }
+      }
+    })
   },
   methods: {
     valueChange(propertyName, value) {
       this.formValues[propertyName] = value
     },
-    onSubmit() {},
-    hasError(name) {
-      return 'oui'
-      // const error = this.errors.find((item) => item.name === name)
-      // if (error) return error
-      // return ''
+    handleSubmit() {
+      if (this.validateFormValues()) {
+        // dispatch form
+      }
+    },
+    hasError(fieldId) {
+      const error = this.errors[fieldId]
+      if (error) return error
+      return ''
+    },
+    validateFormValues() {
+      this.errors = {}
+      const values = this.formValues
+      let errors = {}
+
+      Object.keys(values).forEach((propertyName) => {
+        const error = this.$validateValue(
+          propertyName,
+          values[propertyName],
+          this.optionalFields.includes(propertyName)
+        )
+        if (error) {
+          errors = { ...errors, [propertyName]: error }
+        }
+      })
+      if (errors) {
+        this.errors = errors
+        return false
+      }
+      return true
     },
   },
 }
