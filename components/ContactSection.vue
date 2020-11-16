@@ -1,22 +1,35 @@
 <template>
-  <div class="relative bg-secondary section-spacer">
-    <div class="absolute inset-0">
-      <div class="absolute inset-y-0 left-0 w-1/2 bg-secondary"></div>
-    </div>
-    <div class="relative max-w-7xl mx-auto lg:grid lg:grid-cols-5">
-      <div class="bg-secondary px-4 sm:px-6 lg:col-span-2 lg:px-8 xl:pr-12">
-        <div class="max-w-lg mx-auto">
-          <teaser
-            v-for="item in blok.teaser"
+  <section class="relative bg-secondary section-spacer">
+    <div class="container">
+      <div class="absolute inset-0">
+        <div class="absolute inset-y-0 left-0 w-1/2 bg-secondary"></div>
+      </div>
+      <div class="relative lg:max-w-7xl mx-auto lg:grid lg:grid-cols-5">
+        <div class="bg-secondary lg:col-span-2">
+          <div class="lg:max-w-xl lg:mr-auto">
+            <teaser
+              v-for="item in blok.teaser"
+              :key="item._uid"
+              :blok="item"
+              :is-nested="true"
+            />
+            <contact-card class="hidden lg:flex" />
+          </div>
+        </div>
+        <div
+          class="md:flex md:justify-between items-center w-full lg:col-span-3"
+        >
+          <contact-form
+            v-for="item in blok.form"
             :key="item._uid"
             :blok="item"
-            :is-nested="true"
+            class="flex-1"
           />
+          <contact-card class="md:flex lg:hidden md:max-w-xs w-full" />
         </div>
       </div>
-      <contact-form v-for="item in blok.form" :key="item._uid" :blok="item" />
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

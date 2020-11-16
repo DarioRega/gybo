@@ -114,6 +114,11 @@ $lines: (1,2,3,4,5);
       @apply bg-secondary outline-none;
     }
   }
+
+  .form-input {
+    @apply bg-secondary border-secondary-sc;
+  }
+
   .form-outline {
     &:focus {
       @apply outline-none border-transparent;
@@ -125,11 +130,7 @@ $lines: (1,2,3,4,5);
 .form-input {
   @apply border border-primary rounded-md mb-4 text-primary;
 }
-.theme-dusk {
-  .form-input {
-    @apply bg-secondary border-secondary;
-  }
-}
+
 .form-input::placeholder {
   @apply text-secondary;
 }

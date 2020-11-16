@@ -1,6 +1,8 @@
 <template>
-  <div class="bg-secondary px-4 sm:px-6 lg:col-span-3 lg:px-8 xl:pl-12">
-    <div class="max-w-lg mx-auto lg:max-w-none">
+  <div class="bg-secondary">
+    <div
+      class="max-w-xl w-full lg:max-w-2xl xl:max-w-5xl xxl:max-w-6xl md:ml-0 lg:ml-auto lg:mr-0 mx-auto"
+    >
       <form action="#" method="POST" class="grid grid-cols-1 gap-y-6">
         <input-form
           v-for="field in blok.fields"

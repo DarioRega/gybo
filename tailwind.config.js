@@ -48,6 +48,7 @@ module.exports = {
         primary: 'var(--color-border-primary)',
         secondary: 'var(--color-border-secondary)',
         tertiary: 'var(--color-border-tertiary)',
+        'secondary-sc': 'var(--color-border-secondary-sc)',
       },
       colors: {
         brand: {

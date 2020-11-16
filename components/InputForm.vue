@@ -7,6 +7,7 @@
         :id="blok.id"
         v-model="value"
         :name="blok.id"
+        rows="5"
         class="form-input form-outline block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
         :placeholder="blok.placeholder"
       ></textarea>
