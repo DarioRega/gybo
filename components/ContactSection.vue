@@ -44,8 +44,5 @@ export default {
       required: true,
     },
   },
-  mounted() {
-    console.log('THIS BLOK CONTACT SECTIon', this.blok)
-  },
 }
 </script>

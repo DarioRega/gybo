@@ -38,8 +38,5 @@ export default {
       required: true,
     },
   },
-  mounted() {
-    console.log('CONTAINER PREOCESS STEP', this.blok)
-  },
 }
 </script>

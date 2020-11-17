@@ -133,9 +133,6 @@ export default {
       return store.currentTheme
     },
   },
-  mounted() {
-    console.log('this.blok NAVBAR', this.blok)
-  },
   methods: {
     open() {
       openMenu()

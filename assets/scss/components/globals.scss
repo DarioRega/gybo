@@ -172,7 +172,7 @@ $lines: (1, 2, 3, 4, 5);
 // TODO add for IE support
 .theme-toggler {
   align-self: center;
-  background-image: url(~assets/images/toggler.svg);
+  background-image: url('~assets/images/toggler.svg');
   width: 58px;
   height: 27px;
   border-radius: 47px;
@@ -187,6 +187,6 @@ background-position: -2.4px -1.5px;
   border: 1px solid #F9FAFB;
 }
 
-//*:not(.word-enter-active, .word-enter, .word-leave, .word-leave-to,.word-enter-to){
-//  @apply transition-colors duration-300 ease-linear;
-//}
+*:not(.word-enter-active, .word-enter, .word-leave, .word-leave-to,.word-enter-to){
+  @apply transition-colors duration-300 ease-linear;
+}

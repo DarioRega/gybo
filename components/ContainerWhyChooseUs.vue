@@ -34,8 +34,5 @@ export default {
       required: true,
     },
   },
-  mounted() {
-    console.log('BLOK WHY CHOOSE CONTAINER', this.blok)
-  },
 }
 </script>

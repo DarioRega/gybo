@@ -60,8 +60,5 @@ export default {
       return this.blok.buttonCta[0]
     },
   },
-  mounted() {
-    console.log('content two columns', this.blok)
-  },
 }
 </script>

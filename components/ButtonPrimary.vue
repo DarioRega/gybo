@@ -21,7 +21,7 @@ export default {
   methods: {
     navigate() {
       closeMenu()
-      console.log('LOCALE =)>', this.$i18n.locale)
+      // console.log('LOCALE =)>', this.$i18n.locale)
     },
   },
 }

@@ -23,8 +23,5 @@ export default {
       required: true,
     },
   },
-  mounted() {
-    console.log('THIS PROJET TEST', this.blok)
-  },
 }
 </script>
