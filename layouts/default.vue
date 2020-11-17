@@ -1,7 +1,7 @@
 <template>
   <div class="bg-primary relative overflow-hidden" :class="currentTheme">
     <navbar v-if="story.content" :blok="story.content" />
-    <Nuxt class="pt-32" />
+    <Nuxt />
   </div>
 </template>
 <script>

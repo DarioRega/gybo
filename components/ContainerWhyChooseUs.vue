@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-secondary section-spacer overflow-hidden">
+  <div class="bg-secondary w-full section-spacer overflow-hidden">
     <div class="relative container">
       <div class="relative lg:grid lg:grid-cols-2 xl:grid-cols-3 lg:gap-x-8">
         <div class="xl:col-span-1 xl:pr-8 xl:block">

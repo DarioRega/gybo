@@ -1,22 +1,18 @@
 <template>
-  <section v-editable="true" class="page">
-    <div class="pt-64">
-      <h1>asdfhsfdkhgkjdfhgjdfhg</h1>
-      TPAGE ACCUEIL
-    </div>
-    <component
-      :is="story.content.component"
-      v-if="story.content.component"
-      :key="story.content._uid"
-      :blok="story.content"
-    />
+  <section>
+    <!--    <component-->
+    <!--      :is="story.content.component"-->
+    <!--      v-if="story.content.component"-->
+    <!--      :key="story.content._uid"-->
+    <!--      :blok="story.content"-->
+    <!--    />-->
   </section>
 </template>
 
 <script>
 export default {
+  // TODO When adding tranlsations
   asyncData(context) {
-    console.log('OPUTE PATHAR', context.route)
     // // This what would we do in real project
     const version =
       context.query._storyblok || context.isDev ? 'draft' : 'published'
@@ -55,21 +51,24 @@ export default {
       story: { content: {} },
     }
   },
+  created() {
+    this.$router.push('/')
+  },
   mounted() {
     // Use the input event for instant update of content
-    this.$storybridge.on('input', (event) => {
-      if (event.story.id === this.story.id) {
-        this.story.content = event.story.content
-      }
-    })
-    // Use the bridge to listen the events
-    this.$storybridge.on(['published', 'change'], (event) => {
-      // window.location.reload()
-      this.$nuxt.$router.go({
-        path: this.$nuxt.$router.currentRoute,
-        force: true,
-      })
-    })
+    // this.$storybridge.on('input', (event) => {
+    //   if (event.story.id === this.story.id) {
+    //     this.story.content = event.story.content
+    //   }
+    // })
+    // // Use the bridge to listen the events
+    // this.$storybridge.on(['published', 'change'], (event) => {
+    //   // window.location.reload()
+    //   this.$nuxt.$router.go({
+    //     path: this.$nuxt.$router.currentRoute,
+    //     force: true,
+    //   })
+    // })
   },
 }
 </script>

@@ -2,7 +2,7 @@
   <div
     class="fixed lg:relative inset-x-0 h-24 my-auto flex justify-between items-center z-20 bg-primary"
   >
-    <div class="container mx-auto w-full h-full px-4 sm:px-6 relative">
+    <div class="container mx-auto h-full relative">
       <nav
         class="relative flex items-center justify-between h-full md:justify-center"
       >
@@ -10,23 +10,19 @@
           class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0"
         >
           <div class="flex items-center justify-between w-full md:w-auto">
-            <a href="#" aria-label="Home">
-              <img
-                class="h-8 w-auto sm:h-10"
-                src="https://tailwindui.com/img/logos/v1/workflow-mark-on-white.svg"
-                alt="Logo"
-              />
-            </a>
+            <link-primary aria-label="Home" class="uppercase text-primary">
+              <h3 class="font-medium tracking-tight text-primary">Gybo</h3>
+            </link-primary>
             <div class="-mr-2 flex items-center md:hidden">
               <button
                 id="main-menu"
                 type="button"
-                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+                class="inline-flex items-center justify-center rounded-md text-tertiary focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
                 aria-label="Main menu"
                 aria-haspopup="true"
                 @click="open"
               >
-                <icon name="hamburger" size="75" />
+                <icon name="navigation-menu-1" size="100" />
               </button>
             </div>
           </div>
@@ -35,8 +31,10 @@
           <link-primary
             v-for="link in blok.headerlink"
             :key="link._uid"
+            exact-active-class="text-primary font-bold"
             :to="link.path ? '/' + link.path : '/'"
             :alt="link.alt"
+            class="px-3 py-2 text-secondary font-semibold lg:font-normal"
             >{{ link.name }}</link-primary
           >
         </div>
@@ -49,15 +47,6 @@
             @click="toggleTheme"
           ></div>
         </div>
-        <!--          <span class="inline-flex rounded-md shadow">-->
-        <!--            <a-->
-        <!--              href="#"-->
-        <!--              class="inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500 focus:outline-none focus:border-indigo-300 focus:shadow-outline-indigo active:bg-gray-50 active:text-indigo-700 transition duration-150 ease-in-out"-->
-        <!--            >-->
-        <!--              Thème: Dark-->
-        <!--            </a>-->
-        <!--          </span>-->
-        <!--        </div>-->
       </nav>
     </div>
     <transition
@@ -72,7 +61,7 @@
         <div
           class="absolute block top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-50 bg-primary"
         >
-          <div class="rounded-lg shadow-md relative z-50">
+          <div class="rounded-lg shadow-md relative border border-primary z-50">
             <div
               class="rounded-lg shadow-xs overflow-hidden"
               role="menu"
@@ -81,11 +70,14 @@
             >
               <div class="px-5 pt-4 flex items-center justify-between">
                 <div>
-                  <img
-                    class="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/v1/workflow-mark-on-white.svg"
-                    alt=""
-                  />
+                  <link-primary
+                    aria-label="Home"
+                    class="uppercase text-primary"
+                  >
+                    <h3 class="font-medium tracking-tight text-primary">
+                      Gybo
+                    </h3>
+                  </link-primary>
                 </div>
                 <div
                   class="theme-toggler cursor-pointer focus:outline-none"
@@ -95,7 +87,7 @@
                 <div class="-mr-2">
                   <button
                     type="button"
-                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+                    class="inline-flex items-center text-tertiary justify-center p-2 rounded-md text-gray-400 focus:outline-none transition duration-150 ease-in-out"
                     aria-label="Close menu"
                     @click="close"
                   >
@@ -107,8 +99,10 @@
                 <link-primary
                   v-for="link in blok.headerlink"
                   :key="link._uid"
+                  exact-active-class="text-primary font-bold"
                   :to="link.path ? '/' + link.path : '/'"
                   :alt="link.alt"
+                  class="px-3 py-2 text-secondary font-semibold lg:font-normal"
                   >{{ link.name }}</link-primary
                 >
               </div>

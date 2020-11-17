@@ -7,7 +7,7 @@
         :blok="item"
         :is-nested="true"
       />
-      <div v-if="blok" class="carousel w-full md:w-3/4 mx-auto">
+      <div v-if="blok" class="carousel w-full md:w-3/4 mx-auto mt-8">
         <no-ssr>
           <hooper :settings="hooperSettings">
             <slide

@@ -1,7 +1,7 @@
 <template>
   <article v-editable="blok">
     <div
-      class="flex flex-col lg:items-center rounded-lg shadow-lg md:shadow-none overflow-hidden card-swap"
+      class="flex flex-col lg:items-center rounded-lg shadow-lg md:shadow-none overflow-hidden card-swap p-6 md:p-0"
       :class="blok.side === 'right' ? 'lg:flex-row' : 'lg:flex-row-reverse'"
     >
       <div class="flex-shrink-0 lg:w-2/4 py-6">
@@ -21,7 +21,7 @@
         </object>
       </div>
       <div
-        class="flex-1 md:flex-none lg:w-2/4 p-6 flex flex-col justify-between"
+        class="flex-1 md:flex-none lg:w-2/4 py-6 flex flex-col justify-between"
       >
         <div class="flex-1">
           <p

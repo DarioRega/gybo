@@ -2,7 +2,7 @@
   <section class="section-spacer bg-secondary w-full overflow-hidden">
     <div class="container">
       <div class="max-w-max-content lg:max-w-7xl mx-auto">
-        <div class="relative z-10 md:px-6">
+        <div class="relative z-10">
           <div class="lg:max-w-none">
             <teaser
               v-for="item in blok.teaser"
@@ -13,7 +13,7 @@
           </div>
         </div>
         <div class="relative">
-          <div class="relative md:px-6">
+          <div class="relative">
             <div class="lg:grid lg:grid-cols-2 lg:gap-32 mb-8">
               <div class="mb-10 lg:max-w-none lg:mb-0">
                 <div

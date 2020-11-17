@@ -1,23 +1,19 @@
 <template>
-  <div>
-    <h1 class="pt-64">TEST</h1>
-    PAGE DYNAMIUC
-  </div>
-  <!--  <section>-->
-  <!--    <component-->
-  <!--      :is="story.content.component"-->
-  <!--      v-if="story.content.component"-->
-  <!--      :key="story.content._uid"-->
-  <!--      :blok="story.content"-->
-  <!--    />-->
-  <!--  </section>-->
+  <section>
+    <component
+      :is="story.content.component"
+      v-if="story.content.component"
+      :key="story.content._uid"
+      v-editable="true"
+      :blok="story.content"
+    />
+  </section>
 </template>
 
 <script>
 export default {
   asyncData(context) {
     // // This what would we do in real project
-    console.log('ROUTE PATH', context.route.path)
     const version =
       context.query._storyblok || context.isDev ? 'draft' : 'published'
 
