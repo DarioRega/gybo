@@ -87,6 +87,11 @@
                     alt=""
                   />
                 </div>
+                <div
+                  class="theme-toggler cursor-pointer focus:outline-none"
+                  tabindex="4"
+                  @click="toggleTheme"
+                ></div>
                 <div class="-mr-2">
                   <button
                     type="button"

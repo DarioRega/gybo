@@ -154,17 +154,36 @@ $lines: (1, 2, 3, 4, 5);
   }
 }
 
+//.theme-toggler {
+//  align-self: center;
+//  background-image: url(~assets/images/toggler.png);
+//  width: 50px;
+//  height: 24px;
+//  border-radius: 12px;
+//  background-size: 76px 24px;
+//  background-position: -26px 0;
+//  transition: 100ms;
+//}
+//
+
+// TODO add for IE support
 .theme-toggler {
   align-self: center;
-  background-image: url(~assets/images/toggler.png);
-  width: 50px;
-  height: 24px;
-  border-radius: 12px;
-  background-size: 76px 24px;
-  background-position: -26px 0;
-  transition: 100ms;
+  background-image: url(~assets/images/toggler.svg);
+  width: 58px;
+  height: 27px;
+  border-radius: 47px;
+  background-size: 88px 27px;
+  background-position: -30px -1.5px;
+  border: 1px solid #2B2C33;
+  @apply transition-all duration-200;
 }
 
 .theme-dusk .theme-toggler {
-background-position: 0 0;
+background-position: -2.4px -1.5px;
+  border: 1px solid #F9FAFB;
+}
+
+*{
+  @apply transition-colors duration-300 ease-linear;
 }
