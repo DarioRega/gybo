@@ -26,7 +26,7 @@
               </transition>
             </h2>
           </div>
-          <div class="hidden md:block">
+          <div class="hidden sm:block">
             <h3 class="text-primary pb-4 font-medium">
               {{ blok.caption }}
             </h3>

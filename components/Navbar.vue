@@ -13,7 +13,7 @@
             <link-primary aria-label="Home" class="uppercase text-primary">
               <h3 class="font-medium tracking-tight text-primary">Gybo</h3>
             </link-primary>
-            <div class="-mr-2 flex items-center md:hidden">
+            <div class="flex items-center md:hidden">
               <button
                 id="main-menu"
                 type="button"
@@ -84,7 +84,7 @@
                   tabindex="4"
                   @click="toggleTheme"
                 ></div>
-                <div class="-mr-2">
+                <div class="">
                   <button
                     type="button"
                     class="inline-flex items-center text-tertiary justify-center p-2 rounded-md text-gray-400 focus:outline-none transition duration-150 ease-in-out"

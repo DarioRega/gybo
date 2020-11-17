@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import { closeMenu } from '@/store'
+
 export default {
   name: 'ButtonPrimary',
   props: {
@@ -18,6 +20,7 @@ export default {
   },
   methods: {
     navigate() {
+      closeMenu()
       console.log('LOCALE =)>', this.$i18n.locale)
     },
   },

@@ -187,6 +187,6 @@ background-position: -2.4px -1.5px;
   border: 1px solid #F9FAFB;
 }
 
-*:not(.word-enter-active, .word-enter, .word-leave, .word-leave-to,.word-enter-to){
-  @apply transition-colors duration-300 ease-linear;
-}
+//*:not(.word-enter-active, .word-enter, .word-leave, .word-leave-to,.word-enter-to){
+//  @apply transition-colors duration-300 ease-linear;
+//}

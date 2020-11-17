@@ -15,20 +15,19 @@
         <div class="relative">
           <div class="relative">
             <div class="lg:grid lg:grid-cols-2 lg:gap-32 mb-8">
-              <div class="mb-10 lg:max-w-none lg:mb-0">
+              <div class="mb-12 lg:max-w-none lg:mb-0">
                 <div
                   class="rich-text text-secondary"
                   v-html="richtext_col1"
                 ></div>
                 <button-primary
                   v-if="buttonCta"
-                  class="mt-8"
+                  class="mt-12"
                   :to="buttonCta.path"
                   :alt="buttonCta.alt"
                   >{{ buttonCta.name }}</button-primary
                 >
               </div>
-              <h3 class="md:hidden pt-2 pb-1 font-semibold">Here to help</h3>
               <div
                 class="text-secondary rich-text"
                 v-html="richtext_col2"
