@@ -153,3 +153,18 @@ $lines: (1, 2, 3, 4, 5);
     box-shadow: 0 0 0 3px rgba(245, 101, 101, 0.45) !important; // text-tertiary theme
   }
 }
+
+.theme-toggler {
+  align-self: center;
+  background-image: url(~assets/images/toggler.png);
+  width: 50px;
+  height: 24px;
+  border-radius: 12px;
+  background-size: 76px 24px;
+  background-position: -26px 0;
+  transition: 100ms;
+}
+
+.theme-dusk .theme-toggler {
+background-position: 0 0;
+}

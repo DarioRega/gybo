@@ -2,7 +2,7 @@
   <div
     class="fixed lg:relative inset-x-0 h-24 my-auto flex justify-between items-center z-20 bg-primary"
   >
-    <div class="max-w-screen-xl mx-auto w-full h-full px-4 sm:px-6 relative">
+    <div class="container mx-auto w-full h-full px-4 sm:px-6 relative">
       <nav
         class="relative flex items-center justify-between h-full md:justify-center"
       >
@@ -35,20 +35,26 @@
           <link-primary
             v-for="link in blok.headerlink"
             :key="link._uid"
-            :to="link.to ? link.to : '/'"
+            :to="link.path ? '/' + link.path : '/'"
             :alt="link.alt"
             >{{ link.name }}</link-primary
           >
         </div>
-        <!--        <div-->
-        <!--          class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0"-->
-        <!--        >-->
+        <div
+          class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0"
+        >
+          <div
+            class="theme-toggler cursor-pointer focus:outline-none"
+            tabindex="4"
+            @click="toggleTheme"
+          ></div>
+        </div>
         <!--          <span class="inline-flex rounded-md shadow">-->
         <!--            <a-->
         <!--              href="#"-->
         <!--              class="inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500 focus:outline-none focus:border-indigo-300 focus:shadow-outline-indigo active:bg-gray-50 active:text-indigo-700 transition duration-150 ease-in-out"-->
         <!--            >-->
-        <!--              Log in-->
+        <!--              Thème: Dark-->
         <!--            </a>-->
         <!--          </span>-->
         <!--        </div>-->
@@ -96,7 +102,7 @@
                 <link-primary
                   v-for="link in blok.headerlink"
                   :key="link._uid"
-                  :to="link.to ? link.to : '/'"
+                  :to="link.path ? '/' + link.path : '/'"
                   :alt="link.alt"
                   >{{ link.name }}</link-primary
                 >
@@ -110,7 +116,8 @@
 </template>
 
 <script>
-import store, { closeMenu, openMenu } from '../store'
+import store, { closeMenu, openMenu, setTheme } from '~/store'
+
 export default {
   name: 'Navbar',
   props: {
@@ -123,6 +130,12 @@ export default {
     isOpen() {
       return store.isOpen
     },
+    currentTheme() {
+      return store.currentTheme
+    },
+  },
+  mounted() {
+    console.log('this.blok NAVBAR', this.blok)
   },
   methods: {
     open() {
@@ -130,6 +143,13 @@ export default {
     },
     close() {
       closeMenu()
+    },
+    toggleTheme() {
+      if (this.currentTheme.includes('light')) {
+        setTheme('theme-dusk')
+      } else {
+        setTheme('theme-light')
+      }
     },
   },
 }

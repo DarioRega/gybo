@@ -1,14 +1,12 @@
 <template>
   <div class="bg-primary relative overflow-hidden" :class="currentTheme">
     <navbar v-if="story.content" :blok="story.content" />
-    <div class="fixed h-12 right-0" style="top: 8rem">
-      <button @click="toggleTheme">Toggle</button>
-    </div>
     <Nuxt class="pt-32" />
   </div>
 </template>
 <script>
-import store, { setTheme } from '~/store'
+import store from '~/store'
+
 export default {
   async fetch() {
     // // This what would we do in real project
@@ -67,15 +65,6 @@ export default {
         force: true,
       })
     })
-  },
-  methods: {
-    toggleTheme() {
-      if (this.currentTheme.includes('light')) {
-        setTheme('theme-dusk')
-      } else {
-        setTheme('theme-light')
-      }
-    },
   },
 }
 </script>

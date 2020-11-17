@@ -26,7 +26,7 @@
             class="flex-1"
           />
           <contact-card
-            class="md:flex lg:hidden md:max-w-xs w-full"
+            class="md:flex lg:hidden md:max-w-sm w-full"
             :contact="blok.contactGybo"
           />
         </div>
