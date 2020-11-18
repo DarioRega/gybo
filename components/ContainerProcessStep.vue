@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-primary section-spacer">
+  <section class="bg-primary section-spacer mt-24">
     <div class="container">
       <div class="lg:max-w-none">
         <teaser

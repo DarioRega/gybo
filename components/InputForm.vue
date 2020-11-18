@@ -1,11 +1,9 @@
 <template>
   <div>
     <label :for="blok.id" class="sr-only">{{ blok.label }}</label>
-    <span
-      v-if="blok.isOptional"
-      class="caption-sm block pb-2 text-right text-secondary"
-      >{{ blok.optionalText }}</span
-    >
+    <span class="caption-sm block pb-2 text-right text-secondary">{{
+      blok.fieldRequirement
+    }}</span>
     <div class="relative rounded-md shadow-sm">
       <textarea
         v-if="blok.type === 'textarea'"

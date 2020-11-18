@@ -1,5 +1,5 @@
 <template>
-  <section class="relative bg-secondary section-spacer mt-24">
+  <section class="relative bg-secondary section-spacer">
     <div class="container">
       <div class="absolute inset-0">
         <div class="absolute inset-y-0 left-0 w-1/2 bg-secondary"></div>
