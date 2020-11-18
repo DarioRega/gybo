@@ -1,19 +1,23 @@
 import Vue from 'vue'
-
 import AOS from 'aos'
-import 'aos/dist/aos.css'
+import 'aos/dist/aos.css' // If ypu need load compiled AOS css here in plugin
 
-Vue.use(
-  AOS.init({
-    // Global settings:
-    once: true,
-    disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-    startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-    initClassName: 'aos-init', // class applied after initialization
-    animatedClassName: 'aos-animate', // class applied on animation
-    useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-    disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-    debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-    throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-  })
-)
+class AosPlugin {
+  config = {
+    // Your AOS config here
+  }
+
+  install(Vue) {
+    AOS.init(this.config)
+
+    Vue.mixin({
+      updated() {
+        this.$nextTick(function () {
+          AOS.refreshHard() // This is needed to avoid the un-animate aos effect
+        })
+      },
+    })
+  }
+}
+
+Vue.use(new AosPlugin())

@@ -5,7 +5,9 @@
       :key="item._uid"
       :blok="item"
       :is-nested="true"
+      anchor=".anchor-content-swap"
     />
+    <span class="anchor-content-swap"></span>
     <content-swap
       v-for="(item, index) in blok.items"
       :key="item._uid"

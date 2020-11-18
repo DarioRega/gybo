@@ -6,11 +6,20 @@
   >
     <p
       v-if="blok.caption"
+      data-aos="fade-up"
+      data-aos-easing="ease-out"
+      data-aos-duration="300"
+      :data-aos-offset="offset"
       class="text-tertiary mb-4 caption-lg font-semibold tracking-wide uppercase"
     >
       {{ blok.caption }}
     </p>
     <h2
+      data-aos="fade-up"
+      data-aos-easing="linear"
+      data-aos-duration="500"
+      data-aos-delay="200"
+      :data-aos-offset="offset"
       class="font-extrabold tracking-tight text-primary"
       :class="hasContent() ? 'mb-4' : 'title-spacer'"
     >
@@ -19,6 +28,11 @@
     <div v-if="typeof blok.description === 'object'">
       <div
         v-if="hasContent()"
+        data-aos="fade-up"
+        data-aos-easing="ease-out"
+        data-aos-duration="400"
+        :data-aos-offset="offset"
+        data-aos-delay="300"
         class="text-secondary mb-12 rich-text"
         v-html="content_description"
       ></div>
@@ -33,6 +47,10 @@ export default {
     blok: {
       type: Object,
       required: true,
+    },
+    offset: {
+      type: String,
+      default: null,
     },
     isNested: {
       type: Boolean,

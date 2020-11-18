@@ -8,7 +8,14 @@
           :blok="item"
           :is-nested="true"
         />
-        <button-primary>Réservez votre consultation gratuite</button-primary>
+        <div
+          data-aos="fade-left"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="400"
+          data-aos-delay="500"
+        >
+          <button-primary>Réservez votre consultation gratuite</button-primary>
+        </div>
       </div>
     </div>
   </section>

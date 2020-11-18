@@ -1,7 +1,6 @@
 <template>
   <section
-    data-aos="fade-down"
-    class="hero bg-primary relative w-full overflow-hidden flex items-center section-spacer"
+    class="hero bg-primary relative w-full flex items-center section-spacer"
   >
     <div class="container mt-24">
       <main class="mx-auto">
@@ -28,10 +27,21 @@
             </h2>
           </div>
           <div class="hidden sm:block">
-            <h3 class="text-primary pb-4 font-medium">
+            <h3
+              class="text-primary pb-4 font-medium"
+              data-aos="fade-right"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="700"
+              data-aos-delay="600"
+            >
               {{ blok.caption }}
             </h3>
-            <div class="relative">
+            <div
+              class="relative"
+              data-aos="zoom-in-up"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1000"
+            >
               <h1
                 class="tracking-tight text-left lg:text-center font-extrabold text-primary overflow-hidden"
               >
@@ -66,11 +76,19 @@
             </div>
           </div>
           <p
+            data-aos="zoom-in"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="800"
+            data-aos-delay="200"
             class="text-secondary mt-3 md:mt-5 lg:mt-16 md:max-w-6xl mx-auto pb-4"
           >
             {{ blok.description }}
           </p>
           <div
+            data-aos="fade-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="700"
+            data-aos-delay="600"
             class="mt-8 max-w-xl md:max-w-2xl sm:flex justify-start lg:justify-center lg:mx-auto md:mt-8"
           >
             <button-primary> {{ blok.buttonText }} </button-primary>

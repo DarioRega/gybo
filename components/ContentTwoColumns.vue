@@ -17,6 +17,10 @@
             <div class="lg:grid lg:grid-cols-2 lg:gap-32 mb-8">
               <div class="mb-12 lg:max-w-none lg:mb-0">
                 <div
+                  data-aos="fade-up-right"
+                  data-aos-easing="ease-out"
+                  data-aos-duration="800"
+                  data-aos-delay="500"
                   class="rich-text text-secondary"
                   v-html="richtext_col1"
                 ></div>
@@ -29,6 +33,10 @@
                 >
               </div>
               <div
+                data-aos="fade-up-left"
+                data-aos-easing="ease-out"
+                data-aos-duration="800"
+                data-aos-delay="500"
                 class="text-secondary rich-text"
                 v-html="richtext_col2"
               ></div>

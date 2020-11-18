@@ -1,5 +1,11 @@
 <template>
-  <div>
+  <div
+    data-aos="fade-up"
+    data-aos-easing="ease-in-out"
+    data-aos-duration="600"
+    :data-aos-delay="delay"
+    :data-aos-anchor="anchor"
+  >
     <div
       class="flex items-center justify-center h-20 w-20 rounded-md bg-tertiary text-brand-light-gray"
     >
@@ -22,6 +28,14 @@ export default {
   props: {
     blok: {
       type: Object,
+      required: true,
+    },
+    delay: {
+      type: Number,
+      required: true,
+    },
+    anchor: {
+      type: String,
       required: true,
     },
   },

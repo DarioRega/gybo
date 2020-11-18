@@ -1,5 +1,9 @@
 <template>
   <div
+    data-aos="fade-down"
+    data-aos-easing="ease-out"
+    data-aos-duration="800"
+    data-aos-delay="600"
     class="fixed lg:relative inset-x-0 h-24 my-auto flex justify-between items-center z-20 bg-primary"
   >
     <div class="container mx-auto h-full relative">
@@ -42,6 +46,10 @@
           class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0"
         >
           <div
+            data-aos="zoom-out-down"
+            data-aos-duration="600"
+            data-aos-easing="ease-out"
+            data-aos-delay="800"
             class="theme-toggler cursor-pointer focus:outline-none"
             tabindex="4"
             @click="toggleTheme"

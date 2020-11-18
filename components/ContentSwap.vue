@@ -6,6 +6,10 @@
     >
       <div class="flex-shrink-0 lg:w-2/4 py-6">
         <object
+          :data-aos="blok.side === 'right' ? 'zoom-in-right' : 'zoom-in-left'"
+          data-aos-easing="ease-out"
+          data-aos-duration="800"
+          data-aos-delay="500"
           :data="blok.image"
           :class="
             blok.side === 'right' ? 'lg:mr-auto lg:ml-0' : 'lg:ml-auto lg:mr-0'
@@ -21,6 +25,10 @@
         </object>
       </div>
       <div
+        :data-aos="blok.side === 'right' ? 'zoom-in-left' : 'zoom-in-right'"
+        data-aos-easing="ease-out"
+        data-aos-duration="800"
+        data-aos-delay="500"
         class="flex-1 md:flex-none lg:w-2/4 py-6 flex flex-col justify-between"
       >
         <div class="flex-1">
