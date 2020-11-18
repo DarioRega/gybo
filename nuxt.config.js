@@ -40,7 +40,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['aos/dist/aos.css'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -49,6 +49,7 @@ export default {
     '~/plugins/components',
     '~/plugins/carousel.js',
     '~/plugins/form-validation',
+    { src: '~/plugins/aos.js', mode: 'client' },
   ],
   /*
    ** Auto import components

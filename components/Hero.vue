@@ -1,5 +1,6 @@
 <template>
   <section
+    data-aos="fade-down"
     class="hero bg-primary relative w-full overflow-hidden flex items-center section-spacer"
   >
     <div class="container mt-24">

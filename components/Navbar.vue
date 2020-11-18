@@ -50,7 +50,7 @@
       </nav>
     </div>
     <transition
-      enter-active-class="duration-150 eas-out"
+      enter-active-class="duration-150 ease-out"
       enter-class="opacity-0 scale-95"
       enter-to-class="opacity-100 scale-100"
       leave-active-class="duration-100 ease-in"
