@@ -14,7 +14,7 @@
           :class="
             blok.side === 'right' ? 'lg:mr-auto lg:ml-0' : 'lg:ml-auto lg:mr-0'
           "
-          class="w-full object-cover md:w-4/5 md:max-w-sm xl:max-w-lg h-64 md:h-auto lg:h-auto mx-auto"
+          class="content-swap w-full object-cover md:w-4/5 md:max-w-sm xl:max-w-lg h-64 md:h-auto lg:h-auto mx-auto"
           type="image/svg+xml"
         >
           <img
@@ -29,7 +29,7 @@
         data-aos-easing="ease-out"
         data-aos-duration="800"
         data-aos-delay="500"
-        class="flex-1 md:flex-none lg:w-2/4 py-6 flex flex-col justify-between"
+        class="content-swap flex-1 md:flex-none lg:w-2/4 py-6 flex flex-col justify-between"
       >
         <div class="flex-1">
           <p
@@ -73,4 +73,18 @@ export default {
     @apply bg-transparent border-0;
   }
 }
+
+//.content-swap[data-aos='zoom-in-left'].aos-animate {
+//  transform: translate3d(0, 100px, 0) scale(1);
+//  @screen lg {
+//    transform: translate3d(-100px, 0, 0) scale(0.6) !important;
+//  }
+//}
+//
+//.content-swap[data-aos='zoom-in-right'].aos-animate {
+//  transform: translate3d(0, 100px, 0) scale(1);
+//  @screen lg {
+//    transform: translate3d(100px, 0, 0) scale(0.6) !important;
+//  }
+//}
 </style>

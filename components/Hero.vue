@@ -6,10 +6,18 @@
       <main class="mx-auto">
         <div class="text-left lg:text-center">
           <div class="sm:hidden">
-            <h4 class="text-primary pb-4 font-medium">
+            <h4
+              data-aos="fade-right"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1000"
+              class="text-primary pb-4 font-medium"
+            >
               {{ blok.caption }}
             </h4>
             <h2
+              data-aos="fade-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1000"
               class="title-anim font-extrabold relative text-primary pb-4 lg:pb-8 xl:pb-10 overflow-hidden"
             >
               {{ blok.titlep1 }}
@@ -76,14 +84,24 @@
             </div>
           </div>
           <p
+            data-aos="fade-right"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="800"
+            data-aos-delay="300"
+            class="md:hidden text-secondary mt-3 md:mt-5 lg:mt-16 md:max-w-6xl mx-auto pb-4"
+          >
+            {{ blok.description }}
+          </p>
+          <p
             data-aos="zoom-in"
             data-aos-easing="ease-out-cubic"
             data-aos-duration="800"
             data-aos-delay="200"
-            class="text-secondary mt-3 md:mt-5 lg:mt-16 md:max-w-6xl mx-auto pb-4"
+            class="hidden md:block text-secondary mt-3 md:mt-5 lg:mt-16 md:max-w-6xl mx-auto pb-4"
           >
             {{ blok.description }}
           </p>
+
           <div
             data-aos="fade-left"
             data-aos-easing="ease-out-cubic"

@@ -7,6 +7,7 @@
         :blok="item"
         :is-nested="true"
       />
+
       <div v-if="blok" class="carousel w-full md:w-3/4 mx-auto mt-8">
         <no-ssr>
           <hooper :settings="hooperSettings">
@@ -17,6 +18,7 @@
             >
               <testimonial :blok="item" />
             </slide>
+
             <hooper-navigation
               slot="hooper-addons"
               class="hidden sm:block"
