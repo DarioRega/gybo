@@ -101,6 +101,7 @@ export default {
   build: {
     analyze: true,
   },
+  loading: false,
   /*
    ** i18n configuration
    ** See https://i18n.nuxtjs.org/setup
