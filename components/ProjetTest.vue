@@ -6,25 +6,14 @@
           v-for="item in blok.teaser"
           :key="item._uid"
           :blok="item"
-          data-aos-offset="-150"
           :is-nested="true"
+          :should-animate="false"
         />
         <div
           data-aos="fade-left"
           data-aos-easing="ease-in-out"
           data-aos-duration="400"
-          data-aos-delay="500"
-          data-aos-offset="-150"
-          class="lg:hidden"
-        >
-          <button-primary>Réservez votre consultation gratuite</button-primary>
-        </div>
-        <div
-          data-aos="fade-left"
-          data-aos-easing="ease-in-out"
-          data-aos-duration="400"
-          data-aos-delay="500"
-          class="hidden lg:block"
+          data-aos-delay="400"
         >
           <button-primary>Réservez votre consultation gratuite</button-primary>
         </div>

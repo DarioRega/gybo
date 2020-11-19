@@ -6,7 +6,7 @@
   >
     <p
       v-if="blok.caption"
-      data-aos="fade-up"
+      :data-aos="shouldAnimate && 'fade-up'"
       data-aos-easing="ease-out"
       data-aos-duration="300"
       :data-aos-offset="offset"
@@ -15,7 +15,7 @@
       {{ blok.caption }}
     </p>
     <h2
-      data-aos="fade-up"
+      :data-aos="shouldAnimate && 'fade-up'"
       data-aos-easing="linear"
       data-aos-duration="500"
       data-aos-delay="200"
@@ -28,7 +28,7 @@
     <div v-if="typeof blok.description === 'object'">
       <div
         v-if="hasContent()"
-        data-aos="fade-up"
+        :data-aos="shouldAnimate && 'fade-up'"
         data-aos-easing="ease-out"
         data-aos-duration="400"
         :data-aos-offset="offset"
@@ -51,6 +51,10 @@ export default {
     offset: {
       type: String,
       default: null,
+    },
+    shouldAnimate: {
+      type: Boolean,
+      default: true,
     },
     isNested: {
       type: Boolean,

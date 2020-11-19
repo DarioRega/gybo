@@ -1,9 +1,15 @@
 <template>
-  <section class="section-spacer bg-secondary w-full overflow-hidden">
+  <section
+    class="section-spacer content-two-columns bg-secondary w-full overflow-hidden"
+  >
     <div class="container">
       <div class="max-w-max-content lg:max-w-7xl mx-auto">
         <div class="relative z-10">
-          <div class="lg:max-w-none">
+          <div
+            class="lg:max-w-none"
+            data-aos-duration="800"
+            data-aos-delay="500"
+          >
             <teaser
               v-for="item in blok.teaser"
               :key="item._uid"
@@ -20,15 +26,17 @@
                   data-aos="fade-up"
                   data-aos-easing="ease-out"
                   data-aos-duration="500"
-                  data-aos-delay="500"
+                  data-aos-delay="100"
                   class="lg:hidden rich-text text-secondary"
                   v-html="richtext_col1"
                 ></div>
                 <div
                   data-aos="fade-up-right"
                   data-aos-easing="ease-out"
-                  data-aos-duration="800"
-                  data-aos-delay="500"
+                  data-aos-duration="500"
+                  data-aos-delay="200"
+                  data-aos-anchor=".hero"
+                  data-aos-anchor-placement="top-center"
                   class="hidden lg:block rich-text text-secondary"
                   v-html="richtext_col1"
                 ></div>
@@ -58,8 +66,10 @@
               <div
                 data-aos="fade-up-left"
                 data-aos-easing="ease-out"
-                data-aos-duration="800"
-                data-aos-delay="500"
+                data-aos-duration="500"
+                data-aos-delay="200"
+                data-aos-anchor=".hero"
+                data-aos-anchor-placement="top-center"
                 class="hidden lg:block text-secondary rich-text"
                 v-html="richtext_col2"
               ></div>

@@ -25,10 +25,6 @@
         </object>
       </div>
       <div
-        :data-aos="blok.side === 'right' ? 'zoom-in-left' : 'zoom-in-right'"
-        data-aos-easing="ease-out"
-        data-aos-duration="800"
-        data-aos-delay="500"
         class="content-swap flex-1 md:flex-none lg:w-2/4 py-6 flex flex-col justify-between"
       >
         <div class="flex-1">
