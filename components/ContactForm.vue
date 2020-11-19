@@ -8,14 +8,34 @@
         @submit.prevent="handleSubmit"
       >
         <input-form
-          v-for="field in blok.fields"
+          v-for="(field, index) in blok.fields"
           :key="field._uid"
           :blok="field"
           :error="hasError(field.id)"
+          :index="index"
           @valueChange="valueChange"
         />
         <div class="mt-4">
-          <span class="inline-flex rounded-md shadow-sm">
+          <span
+            class="inline-flex rounded-md shadow-sm lg:hidden"
+            data-aos="fade-right"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="500"
+            data-aos-delay="1300"
+            data-aos-offset="-500"
+          >
+            <button-primary type="submit">
+              {{ blok.submitButton }}
+            </button-primary>
+          </span>
+          <span
+            class="inline-flex rounded-md shadow-sm hidden lg:block"
+            data-aos="fade-left"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="500"
+            data-aos-delay="1300"
+            data-aos-offset="-500"
+          >
             <button-primary type="submit">
               {{ blok.submitButton }}
             </button-primary>

@@ -4,7 +4,9 @@
       <div class="absolute inset-0">
         <div class="absolute inset-y-0 left-0 w-1/2 bg-secondary"></div>
       </div>
-      <div class="relative lg:max-w-7xl mx-auto lg:grid lg:grid-cols-5">
+      <div
+        class="relative lg:max-w-7xl mx-auto lg:grid lg:grid-cols-5 contact-form"
+      >
         <div class="bg-secondary lg:col-span-2">
           <div class="lg:max-w-xl lg:mr-auto">
             <teaser

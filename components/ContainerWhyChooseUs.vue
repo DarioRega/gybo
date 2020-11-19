@@ -8,7 +8,6 @@
             :key="item._uid"
             :blok="item"
             :is-nested="true"
-            :should-animate="false"
           />
         </div>
         <div

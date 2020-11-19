@@ -23,10 +23,6 @@
             <div class="lg:grid lg:grid-cols-2 lg:gap-32 mb-8">
               <div class="mb-12 lg:max-w-none lg:mb-0">
                 <div
-                  data-aos="fade-up"
-                  data-aos-easing="ease-out"
-                  data-aos-duration="500"
-                  data-aos-delay="100"
                   class="lg:hidden rich-text text-secondary"
                   v-html="richtext_col1"
                 ></div>
@@ -41,10 +37,9 @@
                   v-html="richtext_col1"
                 ></div>
                 <div
-                  data-aos="fade-up"
+                  data-aos="fade-left"
                   data-aos-easing="ease-out"
-                  data-aos-duration="600"
-                  data-aos-delay="300"
+                  data-aos-duration="500"
                   class="lg:hidden"
                 >
                   <button-primary
@@ -72,10 +67,6 @@
                 </div>
               </div>
               <div
-                data-aos="fade-up"
-                data-aos-easing="ease-out"
-                data-aos-duration="500"
-                data-aos-delay="100"
                 class="lg:hidden text-secondary rich-text"
                 v-html="richtext_col2"
               ></div>

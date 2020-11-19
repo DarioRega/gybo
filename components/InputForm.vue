@@ -1,29 +1,54 @@
 <template>
   <div>
     <label :for="blok.id" class="sr-only">{{ blok.label }}</label>
-    <span class="caption-sm block pb-2 text-right text-secondary">{{
-      blok.fieldRequirement
-    }}</span>
+    <span
+      data-aos="fade-in"
+      data-aos-easing="linear"
+      data-aos-duration="800"
+      data-aos-delay="1200"
+      data-aos-anchor=".contact-form"
+      data-aos-anchor-placement="top-bottom"
+      class="caption-sm block pb-2 text-right text-secondary"
+      >{{ blok.fieldRequirement }}</span
+    >
     <div class="relative rounded-md shadow-sm">
-      <textarea
+      <div
         v-if="blok.type === 'textarea'"
-        :id="blok.id"
-        v-model="value"
-        :name="blok.id"
-        rows="5"
-        :class="error && 'has-error'"
-        class="form-input form-outline block w-full py-3 px-4 transition ease-in-out duration-150"
-        :placeholder="blok.placeholder"
-      ></textarea>
-      <input
+        data-aos="fade-up"
+        data-aos-easing="ease-out"
+        data-aos-duration="500"
+        data-aos-anchor=".contact-form"
+        data-aos-anchor-placement="top-bottom"
+        :data-aos-delay="index * 300 + 100"
+      >
+        <textarea
+          :id="blok.id"
+          v-model="value"
+          :name="blok.id"
+          rows="5"
+          :class="error && 'has-error'"
+          class="form-input form-outline block w-full py-3 px-4 transition ease-in-out duration-150"
+          :placeholder="blok.placeholder"
+        ></textarea>
+      </div>
+      <div
         v-else
-        :id="blok.id"
-        v-model.lazy="value"
-        :name="blok.id"
-        class="form-input form-outline block w-full py-3 px-4 transition ease-in-out duration-150"
-        :class="error && 'has-error'"
-        :placeholder="blok.placeholder"
-      />
+        data-aos="fade-up"
+        data-aos-easing="ease-out"
+        data-aos-duration="500"
+        data-aos-anchor=".contact-form"
+        data-aos-anchor-placement="top-bottom"
+        :data-aos-delay="index * 300 + 100"
+      >
+        <input
+          :id="blok.id"
+          v-model.lazy="value"
+          :name="blok.id"
+          class="form-input form-outline block w-full py-3 px-4 transition ease-in-out duration-150"
+          :class="error && 'has-error'"
+          :placeholder="blok.placeholder"
+        />
+      </div>
       <div
         v-if="error"
         class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none"
@@ -58,6 +83,10 @@ export default {
     error: {
       type: String,
       default: '',
+    },
+    index: {
+      type: Number,
+      required: true,
     },
   },
   data() {

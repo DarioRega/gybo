@@ -54,7 +54,7 @@ export default {
     },
     shouldAnimate: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     isNested: {
       type: Boolean,
@@ -65,6 +65,9 @@ export default {
     content_description() {
       return this.$storyapi.richTextResolver.render(this.blok.description)
     },
+  },
+  mounted() {
+    console.log('SHOULD ANIMATE =>>>>', this.shouldAnimate)
   },
   methods: {
     hasContent() {

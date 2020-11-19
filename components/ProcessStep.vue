@@ -14,10 +14,25 @@
       </div>
       <div class="w-24 md:w-40 md:ml-auto flex-none">
         <img
+          data-aos="fade-right"
+          data-aos-easing="ease-out"
+          data-aos-duration="500"
+          data-aos-anchor=".project-test"
+          data-aos-anchor-placement="top-top"
+          :data-aos-delay="stepNumber * 300 + 400"
           :src="blok.iconSvg.filename"
           :alt="blok.title"
           :onerror="blok.iconSupportOldNavs.fileName"
-          class="icon__step w-full h-full mb-6 md:mb-0 md:p-5"
+          class="icon__step hidden md:block w-full h-full mb-6 md:mb-0 md:p-5"
+        />
+        <img
+          data-aos="fade-right"
+          data-aos-easing="ease-out"
+          data-aos-duration="500"
+          :src="blok.iconSvg.filename"
+          :alt="blok.title"
+          :onerror="blok.iconSupportOldNavs.fileName"
+          class="icon__step md:hidden w-full h-full mb-6 md:mb-0 md:p-5"
         />
       </div>
     </div>

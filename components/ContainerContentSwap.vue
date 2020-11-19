@@ -5,7 +5,6 @@
       :key="item._uid"
       :blok="item"
       :is-nested="true"
-      :should-animate="false"
       anchor=".anchor-content-swap"
     />
     <span class="anchor-content-swap"></span>
