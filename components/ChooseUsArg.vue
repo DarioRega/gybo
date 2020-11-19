@@ -5,6 +5,7 @@
     data-aos-duration="600"
     :data-aos-delay="delay"
     :data-aos-anchor="anchor"
+    data-aos-anchor-placement="top top"
   >
     <div
       class="flex items-center justify-center h-20 w-20 rounded-md bg-tertiary text-brand-light-gray"

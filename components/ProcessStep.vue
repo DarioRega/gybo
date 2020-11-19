@@ -15,11 +15,11 @@
       <div class="w-24 md:w-40 md:ml-auto flex-none">
         <img
           data-aos="fade-right"
-          data-aos-easing="ease-out"
-          data-aos-duration="500"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="400"
           data-aos-anchor=".project-test"
           data-aos-anchor-placement="top-top"
-          :data-aos-delay="stepNumber * 300 + 400"
+          :data-aos-delay="stepNumber * 300 + 200"
           :src="blok.iconSvg.filename"
           :alt="blok.title"
           :onerror="blok.iconSupportOldNavs.fileName"
@@ -29,6 +29,7 @@
           data-aos="fade-right"
           data-aos-easing="ease-out"
           data-aos-duration="500"
+          :data-aos-delay="stepNumber === 2 && 400"
           :src="blok.iconSvg.filename"
           :alt="blok.title"
           :onerror="blok.iconSupportOldNavs.fileName"

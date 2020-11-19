@@ -18,7 +18,13 @@
           data-aos-anchor-placement="top-center"
           class="lg:hidden"
         >
-          <button-primary>Réservez votre consultation gratuite</button-primary>
+          <button-primary
+            v-if="buttonCta"
+            class="mt-12"
+            :to="buttonCta.path"
+            :alt="buttonCta.alt"
+            >{{ buttonCta.name }}</button-primary
+          >
         </div>
         <div
           data-aos="fade-left"
@@ -27,7 +33,7 @@
           data-aos-delay="300"
           class="hidden lg:block"
         >
-          <button-primary>Réservez votre consultation gratuite</button-primary>
+          <button-primary>{{ buttonCta.name }}</button-primary>
         </div>
       </div>
     </div>
@@ -41,6 +47,11 @@ export default {
     blok: {
       type: Object,
       required: true,
+    },
+  },
+  computed: {
+    buttonCta() {
+      return this.blok.buttonCta[0]
     },
   },
 }

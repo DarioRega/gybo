@@ -5,7 +5,7 @@
       data-aos="fade-in"
       data-aos-easing="linear"
       data-aos-duration="800"
-      data-aos-delay="1200"
+      data-aos-delay="1600"
       data-aos-anchor=".contact-form"
       data-aos-anchor-placement="top-bottom"
       class="caption-sm block pb-2 text-right text-secondary"

@@ -9,7 +9,7 @@
           :is-nested="true"
         />
       </div>
-      <div class="lg:grid lg:grid-cols-2 lg:grid-rows-3 lg:gap-y-32">
+      <div class="lg:grid lg:grid-cols-2 lg:grid-rows-3 lg:gap-y-16">
         <process-step
           v-for="(item, index) in blok.step_item"
           :key="item._uid"

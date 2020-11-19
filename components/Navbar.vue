@@ -43,13 +43,13 @@
           >
         </div>
         <div
-          class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0"
+          class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0 md:pt-4"
+          data-aos="zoom-out-down"
+          data-aos-duration="600"
+          data-aos-easing="ease-out"
+          data-aos-delay="800"
         >
           <div
-            data-aos="zoom-out-down"
-            data-aos-duration="600"
-            data-aos-easing="ease-out"
-            data-aos-delay="800"
             class="theme-toggler cursor-pointer focus:outline-none"
             tabindex="4"
             @click="toggleTheme"

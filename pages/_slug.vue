@@ -64,27 +64,4 @@ export default {
   },
 }
 </script>
-<style lang="scss">
-.page-enter-active {
-  animation: fadeInPage 0.4s ease-out both;
-}
-.page-leave-active {
-  animation: fadeOutPage 0.6s ease-in both;
-}
-@keyframes fadeInPage {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fadeOutPage {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-</style>
+<style lang="scss"></style>
