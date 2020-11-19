@@ -43,8 +43,24 @@
                 <div
                   data-aos="fade-up"
                   data-aos-easing="ease-out"
+                  data-aos-duration="600"
+                  data-aos-delay="300"
+                  class="lg:hidden"
+                >
+                  <button-primary
+                    v-if="buttonCta"
+                    class="mt-12"
+                    :to="buttonCta.path"
+                    :alt="buttonCta.alt"
+                    >{{ buttonCta.name }}</button-primary
+                  >
+                </div>
+                <div
+                  data-aos="fade-up"
+                  data-aos-easing="ease-out"
                   data-aos-duration="300"
                   data-aos-delay="300"
+                  class="hidden lg:block"
                 >
                   <button-primary
                     v-if="buttonCta"
@@ -59,7 +75,7 @@
                 data-aos="fade-up"
                 data-aos-easing="ease-out"
                 data-aos-duration="500"
-                data-aos-delay="500"
+                data-aos-delay="100"
                 class="lg:hidden text-secondary rich-text"
                 v-html="richtext_col2"
               ></div>

@@ -6,6 +6,20 @@
     >
       <div class="flex-shrink-0 lg:w-2/4 py-6">
         <object
+          :data="blok.image"
+          :class="
+            blok.side === 'right' ? 'lg:mr-auto lg:ml-0' : 'lg:ml-auto lg:mr-0'
+          "
+          class="content-swap lg:hidden w-full object-cover md:w-4/5 md:max-w-sm xl:max-w-lg h-64 md:h-auto lg:h-auto mx-auto"
+          type="image/svg+xml"
+        >
+          <img
+            :src="blok.imageSupportOldNavs"
+            :alt="blok.title"
+            class="w-full object-cover md:w-4/5 md:max-w-sm xl:max-w-lg h-64 md:h-auto lg:h-auto mx-auto"
+          />
+        </object>
+        <object
           :data-aos="blok.side === 'right' ? 'zoom-in-right' : 'zoom-in-left'"
           data-aos-easing="ease-out"
           data-aos-duration="800"
@@ -14,7 +28,7 @@
           :class="
             blok.side === 'right' ? 'lg:mr-auto lg:ml-0' : 'lg:ml-auto lg:mr-0'
           "
-          class="content-swap w-full object-cover md:w-4/5 md:max-w-sm xl:max-w-lg h-64 md:h-auto lg:h-auto mx-auto"
+          class="content-swap hidden lg:block w-full object-cover md:w-4/5 md:max-w-sm xl:max-w-lg h-64 md:h-auto lg:h-auto mx-auto"
           type="image/svg+xml"
         >
           <img

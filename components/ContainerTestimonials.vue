@@ -6,6 +6,7 @@
         :key="item._uid"
         :blok="item"
         :is-nested="true"
+        :should-animate="false"
       />
 
       <div v-if="blok" class="carousel w-full md:w-3/4 mx-auto mt-8">
