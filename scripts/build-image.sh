@@ -11,3 +11,4 @@ docker build --cache-from $CI_REGISTRY_IMAGE/$IMAGE_NAME:$ENV_TAG  \
 
 # Push image into container registry
 docker push $CI_REGISTRY_IMAGE/$IMAGE_NAME:$ENV_TAG
+
