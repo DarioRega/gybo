@@ -1,3 +1,4 @@
+require('./config')
 export default {
   /*
    ** Nuxt rendering mode
@@ -75,6 +76,7 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    '@nuxtjs/dotenv',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://i18n.nuxtjs.org/setup
@@ -84,7 +86,7 @@ export default {
     [
       'storyblok-nuxt',
       {
-        accessToken: 'JXse1zTrs8gMl3zueNeTVQtt',
+        accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
         cacheProvider: 'memory',
       },
     ],

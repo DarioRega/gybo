@@ -1,84 +1,28 @@
+image: python:3-alpine
+
 stages:
-  - install
-  - test
-  - deploy
+  - Build
+  - Deploy
 
-#/*----------------------------------------*\
-# Install
-#\*----------------------------------------*/
-install:
-  stage: install
+Build:Production:
+  image: docker
+  stage: Build
+  services:
+    - docker:dind
+  tags:
+    - docker
+  variables:
+    IMAGE_NAME: frontend
+    ENV_TAG: production
+    DOCKER_FILE: ./Dockerfile
+  script: ./scripts/build-image.sh
+  only:
+    - master
+
+Deploy:Production:
+  stage: Deploy
   script:
-    - npm ci --cache .npm --prefer-offline
-  artifacts:
-    untracked: true
-    expire_in: 1h
-    paths:
-      - node_modules/
-  cache:
-    key: global-cache-${CI_PROJECT_NAME}
-    paths:
-      - .npm/
-
-#/*----------------------------------------*\
-# Tests
-#\*----------------------------------------*/
-.test:
-  stage: test
-  dependencies:
-    - install
-
-test:unit:
-  extends: .test
-  script:
-    - npm run test:unit
-  artifacts:
-    when: always
-    reports:
-      junit: junit.xml
-
-test:linter:
-  stage: test
-  extends: .test
-  script:
-    - npm run validate
-
-#/*----------------------------------------*\
-# Pages
-#\*----------------------------------------*/
-
-#.pages:
-#  stage: deploy
-#  before_script:
-#    - mkdir -p public
-#    - mkdir -p public/storybook
-#  artifacts:
-#    name: "$CI_PIPELINE_ID"
-#    paths:
-#      - public
-#  dependencies:
-#    - install
-#
-#.storybook:
-#  script:
-#    - npm run storybook:build -- -o public/storybook
-#
-#pages:deploy:branch:
-#  extends:
-#    - .pages
-#    - .storybook
-#  environment:
-#    name: preview/${CI_PROJECT_NAME}/${CI_COMMIT_REF_NAME}
-#    url: https://seelo.gitlab.io/-/arasap/website/-/jobs/${CI_JOB_ID}/artifacts/public/storybook/index.html
-#  except:
-#    - master
-#
-#pages:deploy:master:
-#  extends:
-#    - .pages
-#    - .storybook
-#  only:
-#    - master
-#  environment:
-#    name: production/$CI_COMMIT_REF_NAME
-#    url: https://seelo.gitlab.io/arasap/website/storybook
+    - pip3 install jelapi
+    - python deploy.py website production
+  only:
+    - master
