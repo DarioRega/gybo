@@ -14,6 +14,7 @@ export default {
     port: process.env.PORT || 3000,
     host: '0.0.0.0', // default: localhost
   },
+  serverMiddleware: ['~/api/contact'],
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
@@ -91,15 +92,14 @@ export default {
       },
     ],
   ],
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
-  axios: {},
-  /*
-   ** Content module configuration
-   ** See https://content.nuxtjs.org/configuration
-   */
+  axios: {
+    proxy: true, // Can be also an object with default options
+  },
+
+  proxy: {
+    '/api/contact/':
+      process.env.CONTACT_URL || 'http://localhost:3000/api/contact',
+  },
   content: {},
   /*
    ** Build configuration

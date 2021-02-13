@@ -77,9 +77,16 @@ export default {
       this.formValues[propertyName] = value
     },
     handleSubmit() {
-      if (this.validateFormValues()) {
-        // dispatch form
+      console.log('handle submit')
+      if (!this.validateFormValues()) {
+        console.log('NOT VALID', this.validateFormValues())
+        return
       }
+      console.log('axios post')
+      this.$axios
+        .post('/api/contact', this.formValues)
+        .then((res) => console.log('res contact', res))
+        .catch((err) => console.log('err contact', err))
     },
     hasError(fieldId) {
       const error = this.errors[fieldId]
@@ -101,7 +108,8 @@ export default {
           errors = { ...errors, [propertyName]: error }
         }
       })
-      if (errors) {
+      if (!Object.keys(errors).length === 0 && errors.constructor === Object) {
+        console.log('ERRORS', errors)
         this.errors = errors
         return false
       }
