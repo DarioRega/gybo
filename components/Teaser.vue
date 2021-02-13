@@ -66,9 +66,6 @@ export default {
       return this.$storyapi.richTextResolver.render(this.blok.description)
     },
   },
-  mounted() {
-    console.log('SHOULD ANIMATE =>>>>', this.shouldAnimate)
-  },
   methods: {
     hasContent() {
       const description = this.blok.description

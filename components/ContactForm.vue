@@ -1,5 +1,11 @@
 <template>
   <div class="bg-secondary">
+    <notification
+      :is-visible="shouldShowNotification"
+      :message="notification.message"
+      :type="notification.type"
+      @click="shouldShowNotification = false"
+    />
     <div
       class="max-w-xl w-full lg:max-w-2xl xl:max-w-5xl xxl:max-w-6xl md:ml-0 lg:ml-auto lg:mr-0 mx-auto"
     >
@@ -36,8 +42,8 @@
             data-aos-delay="1300"
             data-aos-offset="-500"
           >
-            <button-primary type="submit">
-              {{ blok.submitButton }}
+            <button-primary type="submit" :is-loading="isLoading">
+              {{ isLoading ? 'Envoi en cours...' : blok.submitButton }}
             </button-primary>
           </span>
         </div>
@@ -60,7 +66,24 @@ export default {
       formValues: {},
       errors: {},
       optionalFields: [''],
+      isLoading: false,
+      shouldShowNotification: false,
+      notification: {
+        type: '',
+        message: '',
+      },
     }
+  },
+  watch: {
+    shouldShowNotification(newValue, oldValue) {
+      if (newValue) {
+        setTimeout(() => {
+          if (this.shouldShowNotification) {
+            this.shouldShowNotification = false
+          }
+        }, 5000)
+      }
+    },
   },
   mounted() {
     this.blok.fields.forEach((field) => {
@@ -77,16 +100,35 @@ export default {
       this.formValues[propertyName] = value
     },
     handleSubmit() {
-      console.log('handle submit')
       if (!this.validateFormValues()) {
-        console.log('NOT VALID', this.validateFormValues())
         return
       }
-      console.log('axios post')
+      this.isLoading = true
       this.$axios
         .post('/api/contact', this.formValues)
-        .then((res) => console.log('res contact', res))
-        .catch((err) => console.log('err contact', err))
+        .then((res) => this.handleSuccess())
+        .catch(() =>
+          this.handleError(
+            'Un problème est survenu, veuillez nous contacter directement via notre email en bas de page. Merci'
+          )
+        )
+        .finally(() => (this.isLoading = false))
+    },
+    handleSuccess() {
+      this.formValues = {}
+      this.shouldShowNotification = true
+      this.notification = {
+        type: 'success',
+        message:
+          'Merci pour votre envoi, nous reviendrons vers vous dès que possible.',
+      }
+    },
+    handleError(errMessage) {
+      this.shouldShowNotification = true
+      this.notification = {
+        type: 'error',
+        message: errMessage,
+      }
     },
     hasError(fieldId) {
       const error = this.errors[fieldId]
@@ -108,8 +150,7 @@ export default {
           errors = { ...errors, [propertyName]: error }
         }
       })
-      if (!Object.keys(errors).length === 0 && errors.constructor === Object) {
-        console.log('ERRORS', errors)
+      if (Object.keys(errors).length > 0 && errors.constructor === Object) {
         this.errors = errors
         return false
       }

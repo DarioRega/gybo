@@ -23,16 +23,14 @@ const transporter = nodemailer.createTransport({
 })
 
 const sendMail = (req, res) => {
-  console.log('SEND MAIL')
   transporter.sendMail(
     {
       from: `${req.body.full_name}<${req.body.email}>`,
-      to: 'dario.regazzoni@outlook.fr',
+      to: process.env.GYBO_CONTACT,
       subject: req.body.subject || 'Nouveau message de Gybo.ch',
       html: formatTemplate(req.body),
     },
     function (err, info) {
-      console.log('IN CALLBACK')
       if (err) {
         return res.status(500).send(err)
       }

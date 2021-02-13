@@ -20,13 +20,14 @@ export default {
   },
   methods: {
     navigate() {
-      closeMenu()
-      if (this.$i18n.locale === 'fr') {
-        this.$router.push('/services')
-      } else {
-        this.$router.push(`/${this.$i18n.locale}/services`)
+      if (this.isNavigation) {
+        closeMenu()
+        if (this.$i18n.locale === 'fr') {
+          this.$router.push('/services')
+        } else {
+          this.$router.push(`/${this.$i18n.locale}/services`)
+        }
       }
-      // console.log('LOCALE =)>', this.$i18n.locale)
     },
   },
 }

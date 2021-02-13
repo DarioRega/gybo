@@ -14,7 +14,6 @@ export default (context, inject) => {
     en: {},
   }
   /* eslint-enable */
-  // console.log('CONTEXT', context)
   const validate = (property, value, isOptional) => {
     if (!isOptional) {
       if (!value) {
