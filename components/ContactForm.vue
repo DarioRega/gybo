@@ -10,6 +10,7 @@
       class="max-w-xl w-full lg:max-w-2xl xl:max-w-5xl xxl:max-w-6xl md:ml-0 lg:ml-auto lg:mr-0 mx-auto"
     >
       <form
+        :key="formKey"
         class="grid grid-cols-1 gap-y-6 md:gap-y-6"
         @submit.prevent="handleSubmit"
       >
@@ -63,6 +64,7 @@ export default {
   },
   data() {
     return {
+      formKey: 1,
       formValues: {},
       errors: {},
       optionalFields: [''],
@@ -116,6 +118,7 @@ export default {
     },
     handleSuccess() {
       this.formValues = {}
+      this.formKey = Math.floor(Math.random() * Math.floor(9999))
       this.shouldShowNotification = true
       this.notification = {
         type: 'success',
