@@ -1,11 +1,12 @@
 import sys
-
+import os
 from jelapi import JelasticAPI
 
 CONTAINER = (sys.argv)[1]
 ENV = (sys.argv)[2]
+JELASTIC_TOKEN = os.getenv('JELASTIC_TOKEN')
 
-japi = JelasticAPI(apiurl='https://app.jpc.infomaniak.com/1.0/', apitoken='c56467eda3684ab7a0dd94f97fc4585869f1f6f9')
+japi = JelasticAPI(apiurl='https://app.jpc.infomaniak.com/1.0/', apitoken=JELASTIC_TOKEN)
 envs = japi.getEnvsByEnvGroups([ENV, CONTAINER])
 
 if len(envs) < 1:
