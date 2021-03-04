@@ -11,7 +11,6 @@
 
 <script>
 export default {
-  transition: 'page',
   asyncData(context) {
     // // This what would we do in real project
     const version =
@@ -66,5 +65,11 @@ export default {
       })
     })
   },
+  head() {
+    return {
+      title: 'GYBO | Accueil',
+    }
+  },
+  transition: 'page',
 }
 </script>

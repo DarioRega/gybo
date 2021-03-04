@@ -3,6 +3,7 @@ const fs = require('fs')
 
 const env = process.env.NODE_ENV
 
+console.log('ENV => ', env)
 const envPath = path.resolve(process.cwd(), `.env.${env}`)
 const defaultEnvPath = path.resolve(process.cwd(), '.env')
 

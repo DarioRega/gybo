@@ -11,8 +11,8 @@
 </template>
 
 <script>
+import _ from 'lodash'
 export default {
-  transition: 'page',
   asyncData(context) {
     // // This what would we do in real project
     const version =
@@ -62,6 +62,12 @@ export default {
       })
     })
   },
+  head() {
+    return {
+      title: `GYBO | ${_.capitalize(this.$route.params.slug)}`,
+    }
+  },
+  transition: 'page',
 }
 </script>
 <style lang="scss"></style>
