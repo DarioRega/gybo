@@ -15,7 +15,9 @@ Build:Production:
     IMAGE_NAME: frontend
     ENV_TAG: production
     DOCKER_FILE: ./Dockerfile
-  script: ./scripts/build-image.sh
+  script:
+    - ./scripts/build-image.sh
+    - echo $JELASTIC_TOKEN
   only:
     - master
 
@@ -23,7 +25,6 @@ Deploy:Production:
   stage: Deploy
   script:
     - pip3 install jelapi
-    - echo $JELASTIC_TOKEN
     - python deploy.py website production
   only:
     - master
