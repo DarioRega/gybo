@@ -23,6 +23,7 @@ Deploy:Production:
   stage: Deploy
   script:
     - pip3 install jelapi
+    - echo $JELASTIC_TOKEN
     - python deploy.py website production
   only:
     - master
