@@ -17,7 +17,6 @@ Build:Production:
     DOCKER_FILE: ./Dockerfile
   script:
     - ./scripts/build-image.sh
-    - echo $JELASTIC_TOKEN
   only:
     - master
 
