@@ -1,4 +1,7 @@
-require('./config')
+//require('./config')
+const dotenv = require('dotenv')
+dotenv.config()
+
 export default {
   /*
    ** Nuxt rendering mode
