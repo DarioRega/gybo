@@ -1,6 +1,6 @@
 //const dotenv = require('dotenv')
 //dotenv.config()
-require('./config')
+require('../config')
 const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser')
 const app = require('express')()
