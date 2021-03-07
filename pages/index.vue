@@ -1,5 +1,8 @@
 <template>
   <section>
+    <div class="h-64 py-32 bg-yellow-500">
+      <h3>TEST</h3>
+    </div>
     <component
       :is="story.content.component"
       v-if="story.content.component"

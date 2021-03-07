@@ -9,7 +9,7 @@
       />
 
       <div v-if="blok" class="carousel w-full md:w-3/4 mx-auto mt-8">
-        <no-ssr>
+        <client-only>
           <hooper :settings="hooperSettings">
             <slide
               v-for="(item, index) in blok.testimonial"
@@ -25,7 +25,7 @@
             ></hooper-navigation>
             <hooper-pagination slot="hooper-addons"></hooper-pagination>
           </hooper>
-        </no-ssr>
+        </client-only>
       </div>
     </div>
   </section>
