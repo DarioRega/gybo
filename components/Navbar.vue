@@ -155,10 +155,8 @@ export default {
       } else {
         themeSelected += 'light'
       }
-      console.log('SET ITEM => ', themeSelected)
       window.localStorage.setItem('themeSelected', themeSelected)
       setTheme(themeSelected)
-      console.log(window.localStorage.getItem('themeSelected'))
     },
   },
 }
