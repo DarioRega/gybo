@@ -81,11 +81,11 @@ export default {
           userBrowserTheme = 'theme-dusk'
         }
         setTheme(userBrowserTheme)
-        localStorage.setItem('themeSelected', userBrowserTheme)
+        window.localStorage.setItem('themeSelected', userBrowserTheme)
       }
     },
     hasThemePreferenceInStorage() {
-      return localStorage.getItem('themeSelected')
+      return window.localStorage.getItem('themeSelected')
     },
     isUserUsingDarkBrowserMode() {
       return (
