@@ -26,7 +26,7 @@ const transporter = nodemailer.createTransport({
 const sendMail = (req, res) => {
   transporter.sendMail(
     {
-      from: 'devgybo@gmail.com',
+      from: `${req.body.full_name}<${req.body.email}>`,
       to: process.env.GYBO_CONTACT,
       subject: req.body.subject || 'Nouveau message de Gybo.ch',
       html: formatTemplate(req.body),
