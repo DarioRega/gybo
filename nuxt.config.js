@@ -29,6 +29,11 @@ export default {
         name: 'description',
         content: process.env.npm_package_description || '',
       },
+      { property: 'og:site_name', content: 'Gybo' },
+      { property: 'og:title', content: 'Gybo - Grow your business online' },
+      { property: 'og:url', content: 'https://gybo.ch' },
+      // { property: 'og:image', itemprop:'image', content: '/partnerstext.png', },
+      { property: 'og:type', content: 'website' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -36,10 +41,6 @@ export default {
         rel: 'stylesheet',
         href:
           'https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css',
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://unpkg.com/aos@2.3.1/dist/aos.css',
       },
     ],
   },
@@ -106,7 +107,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {
-    analyze: true,
+    analyze: false,
   },
   loading: false,
   /*
@@ -132,5 +133,15 @@ export default {
    */
   svgSprite: {
     input: '~/assets/svg/',
+  },
+  sitemap: {
+    hostname: 'https://gybo,ch',
+    // lastmod: '2020-07-29',
+    gzip: true,
+    exclude: ['**/404'],
+    // i18n: {
+    //   locales: ['en', 'fr'],
+    //   routesNameSeparator: '___',
+    // },
   },
 }
