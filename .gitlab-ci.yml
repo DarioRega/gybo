@@ -15,7 +15,8 @@ Build:Production:
     IMAGE_NAME: frontend
     ENV_TAG: production
     DOCKER_FILE: ./Dockerfile
-  script: ./scripts/build-image.sh
+  script:
+    - ./scripts/build-image.sh
   only:
     - master
 
