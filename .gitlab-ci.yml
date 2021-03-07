@@ -17,8 +17,7 @@ Build:Production:
     DOCKER_FILE: ./Dockerfile
   before_script:
     - ./setup_env.sh
-  script:
-    - ./scripts/build-image.sh
+  script: ./scripts/build-image.sh
   only:
     - master
 
