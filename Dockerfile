@@ -2,7 +2,6 @@ FROM node:12-alpine
 
 WORKDIR /code
 
-COPY ./.env.production /code/.env
 COPY ./package.json /code
 COPY ./package-lock.json /code
 RUN npm install
