@@ -8,16 +8,16 @@
             :class="blok.isLandscape ? 'is-landscape' : 'is-portrait'"
           >
             <img
-              :src="
-                currentTheme === 'dark'
-                  ? blok.logoDark.filename
-                  : blok.logo.filename
-              "
-              :onerror="
-                currentTheme === 'dark'
-                  ? blok.logoSupportOldNavsDark.filename
-                  : blok.logoSupportOldNavs.filename
-              "
+              v-if="currentTheme === 'dark'"
+              :src="blok.logo.filename"
+              :onerror="blok.logoSupportOldNavs.filename"
+              :alt="blok.logoSupportOldNavs.alt"
+              class="w-full h-full"
+            />
+            <img
+              v-else
+              :src="blok.logoDark.filename"
+              :onerror="blok.logoSupportOldNavsDark.filename"
               :alt="blok.logoSupportOldNavs.alt"
               class="w-full h-full"
             />
@@ -70,6 +70,11 @@ export default {
   computed: {
     currentTheme() {
       return store.currentTheme
+    },
+    logoUrl() {
+      return this.currentTheme === 'dark'
+        ? this.blok.logo.filename
+        : this.blok.logoDark.filename
     },
   },
   mounted() {
