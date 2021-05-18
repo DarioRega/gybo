@@ -8,9 +8,13 @@
         :is-nested="true"
       />
 
-      <div v-if="blok" class="carousel w-full md:w-3/4 mx-auto mt-8">
+      <div
+        v-if="blok"
+        class="carousel w-full md:w-3/4 mx-auto mt-8"
+        :class="blok.testimonial.length > 1 && 'has-items'"
+      >
         <client-only>
-          <hooper :settings="hooperSettings">
+          <hooper ref="slider" :settings="hooperSettings">
             <slide
               v-for="(item, index) in blok.testimonial"
               :key="index"
@@ -27,7 +31,8 @@
             <hooper-pagination
               v-show="blok.testimonial.lenght > 1"
               slot="hooper-addons"
-            ></hooper-pagination>
+            ></hooper-pagination
+            >slider
           </hooper>
         </client-only>
       </div>
@@ -65,25 +70,39 @@ export default {
         itemsToShow: 1,
         centerMode: true,
         autoPlay: true,
-        infiniteScroll: true,
         playSpeed: '3000',
         transition: 600,
       },
     }
   },
   mounted() {
-    if (this.blok.testimonials) {
-      if (this.blok.testimonials.length < 2) {
-        this.hooperSettings.autoPlay = false
+    if (this.blok.testimonial) {
+      if (this.blok.testimonial.length < 2) {
+        const settings = {
+          autoPlay: false,
+          mouseDrag: false,
+          touchDrag: false,
+          keysControl: false,
+          shortDrag: false,
+          infiniteScroll: false,
+        }
+        this.hooperSettings = { ...this.hooperSettings, ...settings }
+        this.$nextTick().then(() => {
+          this.$refs.slider.update()
+        })
       }
     }
   },
 }
 </script>
 <style lang="scss">
+.carousel.has-items {
+  .hooper {
+    cursor: grab;
+  }
+}
 .hooper {
   height: auto;
-  cursor: grab;
   &:focus {
     @apply outline-none;
   }

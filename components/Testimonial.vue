@@ -8,8 +8,16 @@
             :class="blok.isLandscape ? 'is-landscape' : 'is-portrait'"
           >
             <img
-              :src="blok.logo.filename"
-              :onerror="blok.logoSupportOldNavs.filename"
+              :src="
+                currentTheme === 'dark'
+                  ? blok.logoDark.filename
+                  : blok.logo.filename
+              "
+              :onerror="
+                currentTheme === 'dark'
+                  ? blok.logoSupportOldNavsDark.filename
+                  : blok.logoSupportOldNavs.filename
+              "
               :alt="blok.logoSupportOldNavs.alt"
               class="w-full h-full"
             />
@@ -49,6 +57,8 @@
 </template>
 
 <script>
+import store from '@/store'
+
 export default {
   name: 'Testimonial',
   props: {
@@ -56,6 +66,14 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  computed: {
+    currentTheme() {
+      return store.currentTheme
+    },
+  },
+  mounted() {
+    console.log('TJIS BLOK TESTI', this.blok)
   },
 }
 </script>
