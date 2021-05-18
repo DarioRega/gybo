@@ -20,10 +20,14 @@
             </slide>
 
             <hooper-navigation
+              v-show="blok.testimonial.lenght > 1"
               slot="hooper-addons"
               class="hidden sm:block"
             ></hooper-navigation>
-            <hooper-pagination slot="hooper-addons"></hooper-pagination>
+            <hooper-pagination
+              v-show="blok.testimonial.lenght > 1"
+              slot="hooper-addons"
+            ></hooper-pagination>
           </hooper>
         </client-only>
       </div>
@@ -40,6 +44,7 @@ import {
 } from 'hooper'
 import 'hooper/dist/hooper.css'
 
+// TODO DISABLE HOOPER SLIDER FUNCTIONNALITY IF ONLY ONE TESTIMONIAL
 export default {
   name: 'ContainerTestimonials',
   components: {
@@ -64,6 +69,13 @@ export default {
         playSpeed: '3000',
         transition: 600,
       },
+    }
+  },
+  mounted() {
+    if (this.blok.testimonials) {
+      if (this.blok.testimonials.length < 2) {
+        this.hooperSettings.autoPlay = false
+      }
     }
   },
 }

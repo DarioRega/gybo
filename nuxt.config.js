@@ -1,4 +1,3 @@
-//require('./config')
 const dotenv = require('dotenv')
 dotenv.config()
 
@@ -61,6 +60,13 @@ export default {
     '~/plugins/form-validation',
     { src: '~/plugins/aos.js', mode: 'client' },
   ],
+  env: {
+    STORYBLOK_ACCESS_TOKEN: process.env.STORYBLOK_ACCESS_TOKEN,
+    GMAIL_ADDRESS: process.env.GMAIL_ADDRESS,
+    GMAIL_PASSWORD: process.env.GMAIL_PASSWORD,
+    CONTACT_URL: process.env.CONTACT_URL,
+    GYBO_CONTACT: process.env.GYBO_CONTACT,
+  },
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components

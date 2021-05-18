@@ -1,7 +1,7 @@
 <template>
   <section class="testimonial bg-primary overflow-hidden">
     <div v-if="blok" class="relative mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="relative max-w-2xl xl:max-w-5xl mx-auto">
+      <div class="relative max-w-5xl mx-auto">
         <div class="w-full testimonial__container">
           <div
             class="mx-auto testimonial__logo"
@@ -29,7 +29,7 @@
                 </div>
 
                 <svg
-                  class="hidden md:block mx-1 h-5 w-5 text-tertiary"
+                  class="hidden md:block mx-1 testimonial__separator text-tertiary"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -61,12 +61,21 @@ export default {
 </script>
 
 <style lang="scss">
-.testimonial__logo {
-  &.is-landscape {
-    @apply h-32;
+.testimonial {
+  &__logo {
+    &.is-landscape {
+      width: 70%;
+      @screen sm {
+        width: 50%;
+      }
+    }
+    &.is-portrait {
+      @apply w-40;
+    }
   }
-  &.is-portrait {
-    @apply w-40;
+
+  &__separator {
+    @apply w-5 h-5;
   }
 }
 </style>
