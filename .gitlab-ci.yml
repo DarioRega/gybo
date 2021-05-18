@@ -16,6 +16,7 @@ Build:Production:
     ENV_TAG: production
     DOCKER_FILE: ./Dockerfile
   script:
+    - ./setup_env.sh
     - ./scripts/build-image.sh
   only:
     - master

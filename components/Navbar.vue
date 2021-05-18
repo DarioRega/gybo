@@ -149,11 +149,14 @@ export default {
       closeMenu()
     },
     toggleTheme() {
+      let themeSelected = 'theme-'
       if (this.currentTheme.includes('light')) {
-        setTheme('theme-dusk')
+        themeSelected += 'dusk'
       } else {
-        setTheme('theme-light')
+        themeSelected += 'light'
       }
+      window.localStorage.setItem('themeSelected', themeSelected)
+      setTheme(themeSelected)
     },
   },
 }
