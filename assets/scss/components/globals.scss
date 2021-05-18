@@ -156,20 +156,7 @@ $lines: (1, 2, 3, 4, 5);
     box-shadow: 0 0 0 3px rgba(245, 101, 101, 0.45) !important; // text-tertiary theme
   }
 }
-
-//.theme-toggler {
-//  align-self: center;
-//  background-image: url(~assets/images/toggler.png);
-//  width: 50px;
-//  height: 24px;
-//  border-radius: 12px;
-//  background-size: 76px 24px;
-//  background-position: -26px 0;
-//  transition: 100ms;
-//}
-//
-
-// TODO add for IE support
+// TODO ADD BUTTON INSTEAD OF DIV
 .theme-toggler {
   align-self: center;
   background-image: url('~assets/images/toggler.svg');
@@ -186,7 +173,3 @@ $lines: (1, 2, 3, 4, 5);
 background-position: -2.4px -1.5px;
   border: 1px solid #F9FAFB;
 }
-
-//*:not(.word-enter-active, .word-enter, .word-leave, .word-leave-to,.word-enter-to){
-//  @apply transition-colors duration-300 ease-linear;
-//}
