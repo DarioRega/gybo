@@ -18,10 +18,7 @@ const mailConfig = {
     user: process.env.MAIL_ADDRESS,
     pass: process.env.MAIL_PASSWORD,
   },
-  secureConnection: false,
-  tls: {
-    rejectUnauthorized: false,
-  },
+  secure: true,
 }
 const transporter = nodemailer.createTransport(mailConfig)
 
