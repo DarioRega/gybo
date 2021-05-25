@@ -2,7 +2,7 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 const nodemailer = require('nodemailer')
-const smtpTransport = require('nodemailer-smtp-transport'); /
+const smtpTransport = require('nodemailer-smtp-transport')
 const bodyParser = require('body-parser')
 const app = require('express')()
 
