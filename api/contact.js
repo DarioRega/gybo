@@ -2,7 +2,6 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 const nodemailer = require('nodemailer')
-const smtpTransport = require('nodemailer-smtp-transport')
 const bodyParser = require('body-parser')
 const app = require('express')()
 
@@ -20,10 +19,22 @@ const mailConfig = {
     pass: process.env.MAIL_PASSWORD,
   },
   secure: true,
+  logger: true,
+  debug: true,
+  secureConnection: false,
+  tls: {
+    rejectUnAuthorized: true,
+  },
 }
-const transporter = nodemailer.createTransport(smtpTransport(mailConfig))
+const transporter = nodemailer.createTransport(mailConfig)
 
 const sendMail = (req, res) => {
+  console.log(transporter.options.host)
+  transporter.verify((err, success) => {
+    if (err) console.error('ERR VERIFY', err)
+    console.log('Your config is correct')
+  })
+
   transporter.sendMail(
     {
       from: `${req.body.full_name}<${req.body.email}>`,
