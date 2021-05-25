@@ -18,7 +18,7 @@ const mailConfig = {
     user: process.env.MAIL_ADDRESS,
     pass: process.env.MAIL_PASSWORD,
   },
-  secureConnection: true,
+  secureConnection: false,
   tls: {
     rejectUnauthorized: false,
   },
@@ -34,6 +34,7 @@ const sendMail = (req, res) => {
       html: formatTemplate(req.body),
     },
     function (err, info) {
+      console.log('info ?', info)
       if (err) {
         return res.status(500).send(err)
       }
