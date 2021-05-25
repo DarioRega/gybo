@@ -2,6 +2,7 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 const nodemailer = require('nodemailer')
+const smtpTransport = require('nodemailer-smtp-transport'); /
 const bodyParser = require('body-parser')
 const app = require('express')()
 
@@ -20,7 +21,7 @@ const mailConfig = {
   },
   secure: true,
 }
-const transporter = nodemailer.createTransport(mailConfig)
+const transporter = nodemailer.createTransport(smtpTransport(mailConfig))
 
 const sendMail = (req, res) => {
   transporter.sendMail(
