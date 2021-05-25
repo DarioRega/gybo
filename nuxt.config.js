@@ -62,10 +62,16 @@ export default {
   ],
   env: {
     STORYBLOK_ACCESS_TOKEN: process.env.STORYBLOK_ACCESS_TOKEN,
+    GYBO_CONTACT: process.env.GYBO_CONTACT,
+    CONTACT_URL: process.env.CONTACT_URL,
     GMAIL_ADDRESS: process.env.GMAIL_ADDRESS,
     GMAIL_PASSWORD: process.env.GMAIL_PASSWORD,
-    CONTACT_URL: process.env.CONTACT_URL,
-    GYBO_CONTACT: process.env.GYBO_CONTACT,
+    GMAIL_HOST: process.env.GMAIL_HOST,
+    GMAIL_PORT: process.env.GMAIL_PORT,
+    MAIL_ADDRESS: process.env.MAIL_ADDRESS,
+    MAIL_PASSWORD: process.env.MAIL_PASSWORD,
+    MAIL_HOST: process.env.MAIL_HOST,
+    MAIL_PORT: process.env.MAIL_PORT,
   },
   /*
    ** Auto import components

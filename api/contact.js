@@ -1,6 +1,6 @@
 const dotenv = require('dotenv')
 dotenv.config()
-//require('../config')
+
 const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser')
 const app = require('express')()
@@ -11,17 +11,19 @@ app.post('/api/contact', (req, res) => {
   sendMail(req, res)
 })
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 465,
+const mailConfig = {
+  host: process.env.MAIL_HOST,
+  port: process.env.MAIL_PORT,
   auth: {
-    user: process.env.GMAIL_ADDRESS,
-    pass: process.env.GMAIL_PASSWORD,
+    user: process.env.MAIL_ADDRESS,
+    pass: process.env.MAIL_PASSWORD,
   },
+  secureConnection: false,
   tls: {
     rejectUnauthorized: false,
   },
-})
+}
+const transporter = nodemailer.createTransport(mailConfig)
 
 const sendMail = (req, res) => {
   transporter.sendMail(
