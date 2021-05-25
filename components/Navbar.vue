@@ -51,7 +51,7 @@
         >
           <div
             class="theme-toggler cursor-pointer focus:outline-none"
-            tabindex="4"
+            tabindex="0"
             @click="toggleTheme"
           ></div>
         </div>
@@ -89,7 +89,7 @@
                 </div>
                 <div
                   class="theme-toggler cursor-pointer focus:outline-none"
-                  tabindex="4"
+                  tabindex="0"
                   @click="toggleTheme"
                 ></div>
                 <div class="">
