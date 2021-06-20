@@ -61,7 +61,6 @@ export default {
   },
   computed: {
     currentTheme() {
-      console.log('CURRENT THEME', store.currentTheme)
       return store.currentTheme
     },
     srcUrl() {

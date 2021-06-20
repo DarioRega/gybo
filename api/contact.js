@@ -1,6 +1,6 @@
 const dotenv = require('dotenv')
 dotenv.config()
-//require('../config')
+
 const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser')
 const app = require('express')()
@@ -11,19 +11,30 @@ app.post('/api/contact', (req, res) => {
   sendMail(req, res)
 })
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 465,
+const mailConfig = {
+  host: process.env.MAIL_HOST,
+  port: process.env.MAIL_PORT,
   auth: {
-    user: process.env.GMAIL_ADDRESS,
-    pass: process.env.GMAIL_PASSWORD,
+    user: process.env.MAIL_ADDRESS,
+    pass: process.env.MAIL_PASSWORD,
   },
+  secure: true,
+  logger: true,
+  debug: true,
+  secureConnection: false,
   tls: {
-    rejectUnauthorized: false,
+    rejectUnAuthorized: true,
   },
-})
+}
+const transporter = nodemailer.createTransport(mailConfig)
 
 const sendMail = (req, res) => {
+  console.log(transporter.options.host)
+  transporter.verify((err, success) => {
+    if (err) console.error('ERR VERIFY', err)
+    console.log('Your config is correct')
+  })
+
   transporter.sendMail(
     {
       from: `${req.body.full_name}<${req.body.email}>`,
@@ -32,6 +43,7 @@ const sendMail = (req, res) => {
       html: formatTemplate(req.body),
     },
     function (err, info) {
+      console.log('info ?', info)
       if (err) {
         return res.status(500).send(err)
       }
