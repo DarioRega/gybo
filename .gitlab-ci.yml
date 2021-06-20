@@ -1,8 +1,7 @@
 image: node:14
 deploy:
   only:
-    - master
-    - ci-test-deploy
+    - develop
   stage: deploy
   before_script:
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
