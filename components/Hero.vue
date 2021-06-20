@@ -138,7 +138,7 @@ export default {
       function () {
         this.changeWords()
       }.bind(this),
-      8000
+      7000
     )
   },
   destroyed() {
