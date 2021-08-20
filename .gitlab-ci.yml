@@ -18,4 +18,4 @@ deploy:
     - npm ci
     - npm run build
     - npm run generate
-    - sshpass -p $SSH_PASSWORD rsync --progress -avz -e ssh dist/ yauk5451@boulon.o2switch.net:/home/yauk5451/sites/gybo.ch
+    - sshpass -p $SSH_PASSWORD rsync --progress -avz -e ssh dist/ yauk5451@boulon.o2switch.net:/home/yauk5451/sites/gybo
