@@ -43,7 +43,7 @@
             data-aos-delay="1300"
             data-aos-offset="-500"
           >
-            <button-primary type="submit" :is-loading="isLoading">
+            <button-primary type="submit">
               {{ isLoading ? 'Envoi en cours...' : blok.submitButton }}
             </button-primary>
           </span>
