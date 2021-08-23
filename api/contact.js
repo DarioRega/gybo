@@ -39,7 +39,7 @@ const sendMail = (req, res) => {
     {
       from: `${req.body.full_name}<${req.body.email}>`,
       to: process.env.GYBO_CONTACT,
-      subject: req.body.subject || 'Nouveau message de Gybo.ch',
+      subject: 'Nouveau message de Gybo.ch',
       html: formatTemplate(req.body),
     },
     function (err, info) {
@@ -54,17 +54,18 @@ const sendMail = (req, res) => {
 
 const formatTemplate = (body) => {
   return `
-  <h3>New message from gybo.ch !</h3>
-  <div style="display:flex;align-items:center">
-    <h4>Sender full name: </h4>
-    <p style="margin-left:1rem;">${body.full_name}</p>
-  </div>
-  <div style="display:flex;align-items:center">
-    <h4>Sender email: </h4>
-    <p style="margin-left:1rem;">${body.email}</p>
-  </div>
-  <h4 style="margin-bottom:0">Sender message: </h4>
-  <p style="margin-top:10px">${body.message}</p>
+  <h4 style="margin-bottom:15px;">Salut Broka, après ton nouvel album je rap pour la Lune, beaucoup de gens cherchent à rentrer en contact avec toi via gybo.ch, ta plateforme de streaming,
+  voilà le message de l'un d'eux:</h4>
+    <h5>Nom complet: </h5>
+    <p>${body.full_name}</p>
+    <h5>Email: </h5>
+    <p>${body.email}</p>
+    <h5>Site web: </h5>
+    <p>${body.website || '-'}</p>
+  <h5>Message: </h5>
+  <p>${body.message}</p>
+
+  <h6 style="margin-top:25px;">Peace,<em>Stillstar, le rappeur qui rap pour le Soleil</em></h6>
   `
 }
 
