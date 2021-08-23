@@ -70,4 +70,3 @@ export default {
   transition: 'page',
 }
 </script>
-<style lang="scss"></style>
