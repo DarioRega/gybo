@@ -1,4 +1,6 @@
+// eslint-disable-next-line nuxt/no-cjs-in-config
 const axios = require('axios')
+// eslint-disable-next-line nuxt/no-cjs-in-config
 const dotenv = require('dotenv')
 dotenv.config()
 
@@ -131,10 +133,7 @@ export default {
    ** See https://i18n.nuxtjs.org/setup
    */
   i18n: {
-    locales: [
-      { code: 'fr', iso: 'fr-CH', name: 'Français' },
-      { code: 'en', iso: 'en-US', name: 'English' },
-    ],
+    locales: [{ code: 'fr', iso: 'fr-CH', name: 'Français' }],
     defaultLocale: 'fr',
   },
 
@@ -164,7 +163,7 @@ export default {
     routes(callback) {
       const token = process.env.STORYBLOK_ACCESS_TOKEN
       const version = 'published'
-      let cache_version = 0
+      let cacheVersion = 0
 
       const toIgnore = ['home', 'en/settings']
 
@@ -174,14 +173,14 @@ export default {
       // Load space and receive latest cache version key to improve performance
       axios
         .get(`https://api.storyblok.com/v1/cdn/spaces/me?token=${token}`)
-        .then((space_res) => {
+        .then((spaceRes) => {
           // timestamp of latest publish
-          cache_version = space_res.data.space.version
+          cacheVersion = spaceRes.data.space.version
 
           // Call for all Links using the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
           axios
             .get(
-              `https://api.storyblok.com/v1/cdn/links?token=${token}&version=${version}&cv=${cache_version}&per_page=100`
+              `https://api.storyblok.com/v1/cdn/links?token=${token}&version=${version}&cv=${cacheVersion}&per_page=100`
             )
             .then((res) => {
               Object.keys(res.data.links).forEach((key) => {

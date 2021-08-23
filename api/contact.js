@@ -29,10 +29,8 @@ const mailConfig = {
 const transporter = nodemailer.createTransport(mailConfig)
 
 const sendMail = (req, res) => {
-  console.log(transporter.options.host)
   transporter.verify((err, success) => {
     if (err) console.error('ERR VERIFY', err)
-    console.log('Your config is correct')
   })
 
   transporter.sendMail(
@@ -43,7 +41,6 @@ const sendMail = (req, res) => {
       html: formatTemplate(req.body),
     },
     function (err, info) {
-      console.log('info ?', info)
       if (err) {
         return res.status(500).send(err)
       }
